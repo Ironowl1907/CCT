@@ -174,19 +174,22 @@ texture = ExtResource("1_124al")
 centered = false
 
 [node name="Cupula" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(838, 412)
+position = Vector2(838, 312)
 scale = Vector2(2, 2)
 texture = ExtResource("2_l7ood")
 
 [node name="Cupula2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(802, 416)
+position = Vector2(802, 336)
 scale = Vector2(2, 2)
 texture = ExtResource("2_l7ood")
 
 [node name="Cupula3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(874, 416)
+position = Vector2(874, 381)
 scale = Vector2(2, 2)
 texture = ExtResource("2_l7ood")
