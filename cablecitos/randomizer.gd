@@ -1,12 +1,7 @@
 extends Node
 
-var n1
-var n2
-var n3
-var n4
-
 # Called when the node enters the scene tree for the first time.
-func _ready():	
+func _ready():
 	var listOfShit = [1, 2, 3, 4]
 	
 	for i in range(1,5):
