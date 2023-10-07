@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://bitk14stmrkp8"]
+[gd_scene load_steps=3 format=3 uid="uid://bitk14stmrkp8"]
+
+[ext_resource type="PackedScene" uid="uid://d4m650u4djcuw" path="res://FacuPRY/Objects/AirCraft.tscn" id="1_lfnuj"]
+[ext_resource type="PackedScene" uid="uid://ktuyq5jx8don" path="res://FacuPRY/Objects/Metheor.tscn" id="2_1mslx"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("2_1mslx")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_lfnuj")]

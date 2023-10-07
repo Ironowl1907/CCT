@@ -1,0 +1,752 @@
+[gd_scene load_steps=15 format=3 uid="uid://c6giygd5d02s2"]
+
+[ext_resource type="Texture2D" uid="uid://coodkx354aln2" path="res://icon.svg" id="1_5vj0u"]
+[ext_resource type="Script" path="res://recursos/pelota.gd" id="2_r50qv"]
+[ext_resource type="Texture2D" uid="uid://cnwildu28fhvc" path="res://sprites/piedra roja.png" id="3_wwrsm"]
+[ext_resource type="Texture2D" uid="uid://bddj44oeg7x12" path="res://sprites/piedra celeste.png" id="4_t6yxv"]
+[ext_resource type="Texture2D" uid="uid://0qm1cdnm44gf" path="res://sprites/piedra verde.png" id="5_cdoq2"]
+[ext_resource type="Script" path="res://recursos/verifier.gd" id="6_3b3ha"]
+[ext_resource type="Script" path="res://recursos/tacho.gd" id="7_gcphc"]
+[ext_resource type="Texture2D" uid="uid://bjoqjgxa41d6q" path="res://sprites/UNsolotacho.png" id="8_0lg5q"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j41ou"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hrpl3"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_itbnk"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7cyv3"]
+normal = Vector2(1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ietpi"]
+size = Vector2(20.8154, 20.896)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf1q2"]
+size = Vector2(167, 136)
+
+[node name="recursos" type="Node2D"]
+metadata/_edit_horizontal_guides_ = []
+
+[node name="level walls" type="StaticBody2D" parent="."]
+
+[node name="floor" type="Sprite2D" parent="level walls"]
+position = Vector2(587, 644)
+scale = Vector2(9.29688, 0.40625)
+texture = ExtResource("1_5vj0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level walls"]
+position = Vector2(1150, 624)
+shape = SubResource("WorldBoundaryShape2D_j41ou")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="level walls"]
+position = Vector2(1150, 624)
+shape = SubResource("WorldBoundaryShape2D_hrpl3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="level walls"]
+shape = SubResource("WorldBoundaryShape2D_itbnk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="level walls"]
+shape = SubResource("WorldBoundaryShape2D_7cyv3")
+
+[node name="pelotitas" type="Node" parent="."]
+
+[node name="pelotita" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(100, 571)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("3_wwrsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita2" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(154, 573)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita2"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("3_wwrsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita2"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita2/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita3" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(107, 491)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita3"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("3_wwrsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita3"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita3/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita4" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(199, 453)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita4"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("3_wwrsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita4"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita4/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita5" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(331, 459)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita5"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("3_wwrsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita5"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita5/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita6" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(404, 519)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita6"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("3_wwrsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita6"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita6/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita7" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(296, 511)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita7"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("3_wwrsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita7"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita7/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita8" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(228, 368)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita8"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("3_wwrsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita8"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita8/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita9" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(100, 571)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita9"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("4_t6yxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita9"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita9/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita10" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(154, 573)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita10"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("4_t6yxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita10"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita10/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita11" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(107, 491)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita11"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("4_t6yxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita11"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita11/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita12" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(199, 453)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita12"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("4_t6yxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita12"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita12/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita13" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(331, 459)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita13"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("4_t6yxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita13"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita13/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita14" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(404, 519)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita14"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("4_t6yxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita14"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita14/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita15" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(296, 511)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita15"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("4_t6yxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita15"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita15/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita16" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(228, 368)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita16"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("4_t6yxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita16"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita16/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita17" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(228, 368)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita17"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("5_cdoq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita17"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita17"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita17/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita18" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(100, 571)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita18"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("5_cdoq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita18"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita18"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita18/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita19" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(154, 573)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita19"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("5_cdoq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita19"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita19"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita19/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita20" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(107, 491)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita20"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("5_cdoq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita20"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita20"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita20/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita21" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(199, 453)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita21"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("5_cdoq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita21"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita21"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita21/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita22" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(331, 459)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita22"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("5_cdoq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita22"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita22"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita22/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita23" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(404, 519)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita23"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("5_cdoq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita23"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita23"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita23/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita24" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(296, 511)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita24"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("5_cdoq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita24"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita24"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita24/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="pelotita25" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(228, 368)
+scale = Vector2(1, 0.9926)
+script = ExtResource("2_r50qv")
+tipo = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita25"]
+texture_filter = 1
+position = Vector2(6.99999, 6.04468)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("5_cdoq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita25"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="pelotitas/pelotita25"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita25/detector"]
+position = Vector2(0.565437, -0.62146)
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="verifier" type="Node" parent="."]
+script = ExtResource("6_3b3ha")
+
+[node name="tacho" type="Node2D" parent="verifier"]
+position = Vector2(614, 561)
+script = ExtResource("7_gcphc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="verifier/tacho"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="verifier/tacho/StaticBody2D"]
+polygon = PackedVector2Array(-99, -74, -83, -74, -83, 53, 86, 54, 86, -82, 100, -82, 101, 67, -100, 66)
+
+[node name="tacho" type="Sprite2D" parent="verifier/tacho"]
+modulate = Color(1, 0.32549, 0.258824, 1)
+self_modulate = Color(1, 0.541176, 0.478431, 1)
+texture_filter = 1
+position = Vector2(102, -346)
+scale = Vector2(13.1584, 8.77139)
+texture = ExtResource("8_0lg5q")
+
+[node name="Area2D" type="Area2D" parent="verifier/tacho"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/tacho/Area2D"]
+position = Vector2(-2.5, -13)
+shape = SubResource("RectangleShape2D_qf1q2")
+
+[node name="tacho2" type="Node2D" parent="verifier"]
+position = Vector2(831, 560)
+script = ExtResource("7_gcphc")
+goodType = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="verifier/tacho2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="verifier/tacho2/StaticBody2D"]
+polygon = PackedVector2Array(-99, -74, -83, -74, -83, 53, 86, 54, 86, -82, 100, -82, 101, 67, -100, 66)
+
+[node name="tacho" type="Sprite2D" parent="verifier/tacho2"]
+modulate = Color(0.207843, 0.435294, 1, 1)
+texture_filter = 1
+position = Vector2(103, -347)
+scale = Vector2(13.1584, 8.77139)
+texture = ExtResource("8_0lg5q")
+
+[node name="Area2D" type="Area2D" parent="verifier/tacho2"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/tacho2/Area2D"]
+position = Vector2(-2.5, -13)
+shape = SubResource("RectangleShape2D_qf1q2")
+
+[node name="tacho3" type="Node2D" parent="verifier"]
+position = Vector2(1046, 561)
+script = ExtResource("7_gcphc")
+goodType = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="verifier/tacho3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="verifier/tacho3/StaticBody2D"]
+polygon = PackedVector2Array(-99, -74, -83, -74, -83, 53, 86, 54, 86, -82, 100, -82, 101, 67, -100, 66)
+
+[node name="tacho" type="Sprite2D" parent="verifier/tacho3"]
+modulate = Color(0, 1, 0, 1)
+texture_filter = 1
+position = Vector2(102, -346)
+scale = Vector2(13.1584, 8.77139)
+texture = ExtResource("8_0lg5q")
+
+[node name="Area2D" type="Area2D" parent="verifier/tacho3"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/tacho3/Area2D"]
+position = Vector2(-2.5, -13)
+shape = SubResource("RectangleShape2D_qf1q2")
+
+[connection signal="mouse_entered" from="pelotitas/pelotita/detector" to="pelotitas/pelotita" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita/detector" to="pelotitas/pelotita" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita2/detector" to="pelotitas/pelotita2" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita2/detector" to="pelotitas/pelotita2" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita3/detector" to="pelotitas/pelotita3" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita3/detector" to="pelotitas/pelotita3" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita4/detector" to="pelotitas/pelotita4" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita4/detector" to="pelotitas/pelotita4" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita5/detector" to="pelotitas/pelotita5" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita5/detector" to="pelotitas/pelotita5" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita6/detector" to="pelotitas/pelotita6" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita6/detector" to="pelotitas/pelotita6" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita7/detector" to="pelotitas/pelotita7" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita7/detector" to="pelotitas/pelotita7" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita8/detector" to="pelotitas/pelotita8" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita8/detector" to="pelotitas/pelotita8" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita9/detector" to="pelotitas/pelotita9" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita9/detector" to="pelotitas/pelotita9" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita10/detector" to="pelotitas/pelotita10" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita10/detector" to="pelotitas/pelotita10" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita11/detector" to="pelotitas/pelotita11" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita11/detector" to="pelotitas/pelotita11" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita12/detector" to="pelotitas/pelotita12" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita12/detector" to="pelotitas/pelotita12" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita13/detector" to="pelotitas/pelotita13" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita13/detector" to="pelotitas/pelotita13" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita14/detector" to="pelotitas/pelotita14" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita14/detector" to="pelotitas/pelotita14" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita15/detector" to="pelotitas/pelotita15" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita15/detector" to="pelotitas/pelotita15" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita16/detector" to="pelotitas/pelotita16" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita16/detector" to="pelotitas/pelotita16" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita17/detector" to="pelotitas/pelotita17" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita17/detector" to="pelotitas/pelotita17" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita18/detector" to="pelotitas/pelotita18" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita18/detector" to="pelotitas/pelotita18" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita19/detector" to="pelotitas/pelotita19" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita19/detector" to="pelotitas/pelotita19" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita20/detector" to="pelotitas/pelotita20" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita20/detector" to="pelotitas/pelotita20" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita21/detector" to="pelotitas/pelotita21" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita21/detector" to="pelotitas/pelotita21" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita22/detector" to="pelotitas/pelotita22" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita22/detector" to="pelotitas/pelotita22" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita23/detector" to="pelotitas/pelotita23" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita23/detector" to="pelotitas/pelotita23" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita24/detector" to="pelotitas/pelotita24" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita24/detector" to="pelotitas/pelotita24" method="_on_detector_mouse_exited"]
+[connection signal="mouse_entered" from="pelotitas/pelotita25/detector" to="pelotitas/pelotita25" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="pelotitas/pelotita25/detector" to="pelotitas/pelotita25" method="_on_detector_mouse_exited"]
+[connection signal="body_entered" from="verifier/tacho/Area2D" to="verifier/tacho" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="verifier/tacho/Area2D" to="verifier/tacho" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="verifier/tacho2/Area2D" to="verifier/tacho2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="verifier/tacho2/Area2D" to="verifier/tacho2" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="verifier/tacho3/Area2D" to="verifier/tacho3" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="verifier/tacho3/Area2D" to="verifier/tacho3" method="_on_area_2d_body_exited"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cluqqrnfv1cml"
-path="res://.godot/imported/tacho.png-56bcae35b57415729037270673d9c661.ctex"
+uid="uid://dqwtdajwod8pj"
+path="res://.godot/imported/titan.png-8ddc1a914250b5ffe85dabc70ffb46a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://feli/tacho.png"
-dest_files=["res://.godot/imported/tacho.png-56bcae35b57415729037270673d9c661.ctex"]
+source_file="res://titan.png"
+dest_files=["res://.godot/imported/titan.png-8ddc1a914250b5ffe85dabc70ffb46a8.ctex"]
 
 [params]
 
