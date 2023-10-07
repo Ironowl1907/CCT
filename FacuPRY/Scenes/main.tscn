@@ -1,10 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bitk14stmrkp8"]
 
 [ext_resource type="PackedScene" uid="uid://d4m650u4djcuw" path="res://FacuPRY/Objects/AirCraft.tscn" id="1_lfnuj"]
-[ext_resource type="PackedScene" uid="uid://ktuyq5jx8don" path="res://FacuPRY/Objects/Metheor.tscn" id="2_1mslx"]
+[ext_resource type="PackedScene" uid="uid://bstih0488hi4t" path="res://FacuPRY/Objects/Metheor.tscn" id="2_1mslx"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("2_1mslx")]
+[node name="AirCraft" parent="." instance=ExtResource("1_lfnuj")]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_lfnuj")]
+[node name="Metheor" parent="." instance=ExtResource("2_1mslx")]
+position = Vector2(898, 103)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(965, 537)
+scale = Vector2(158.98, 154.524)
