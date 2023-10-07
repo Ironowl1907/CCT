@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6giygd5d02s2"]
+[gd_scene load_steps=7 format=3 uid="uid://c6giygd5d02s2"]
 
 [ext_resource type="Texture2D" uid="uid://coodkx354aln2" path="res://icon.svg" id="1_0a48m"]
 [ext_resource type="Texture2D" uid="uid://cluqqrnfv1cml" path="res://feli/tacho.png" id="2_gjoew"]
+[ext_resource type="Script" path="res://feli/pelota.gd" id="3_7pxmq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cm28a"]
 size = Vector2(666.25, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qf1q2"]
 size = Vector2(167, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ietpi"]
 
 [node name="recursos" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
@@ -94,3 +97,18 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tacho3/Area2D"]
 position = Vector2(-2.5, -13)
 shape = SubResource("RectangleShape2D_qf1q2")
+
+[node name="pelotitas" type="Node" parent="."]
+
+[node name="pelotita" type="RigidBody2D" parent="pelotitas"]
+position = Vector2(100, 571)
+scale = Vector2(1, 0.9926)
+script = ExtResource("3_7pxmq")
+
+[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita"]
+scale = Vector2(0.226611, 0.226611)
+texture = ExtResource("1_0a48m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita"]
+scale = Vector2(1.38691, 1.38691)
+shape = SubResource("RectangleShape2D_ietpi")
