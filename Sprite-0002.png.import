@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0qm1cdnm44gf"
-path="res://.godot/imported/piedra verde.png-c6ad880b3089f358785d492218da64e8.ctex"
+uid="uid://rrdygpe8w67l"
+path="res://.godot/imported/Sprite-0002.png-be2d0c11222c1eca468919d34832f25a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/piedra verde.png"
-dest_files=["res://.godot/imported/piedra verde.png-c6ad880b3089f358785d492218da64e8.ctex"]
+source_file="res://Sprite-0002.png"
+dest_files=["res://.godot/imported/Sprite-0002.png-be2d0c11222c1eca468919d34832f25a.ctex"]
 
 [params]
 

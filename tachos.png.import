@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0qm1cdnm44gf"
-path="res://.godot/imported/piedra verde.png-c6ad880b3089f358785d492218da64e8.ctex"
+uid="uid://dwr4kdm6q6k50"
+path="res://.godot/imported/tachos.png-a7f2f30ab7ee3b50d0b64373a0ebcac1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/piedra verde.png"
-dest_files=["res://.godot/imported/piedra verde.png-c6ad880b3089f358785d492218da64e8.ctex"]
+source_file="res://tachos.png"
+dest_files=["res://.godot/imported/tachos.png-a7f2f30ab7ee3b50d0b64373a0ebcac1.ctex"]
 
 [params]
 

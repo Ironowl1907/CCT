@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0qm1cdnm44gf"
-path="res://.godot/imported/piedra verde.png-c6ad880b3089f358785d492218da64e8.ctex"
+uid="uid://c24dpisurh8o8"
+path="res://.godot/imported/piedra roja.png-11886d6d34966c48f47cfae34de587ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/piedra verde.png"
-dest_files=["res://.godot/imported/piedra verde.png-c6ad880b3089f358785d492218da64e8.ctex"]
+source_file="res://piedra roja.png"
+dest_files=["res://.godot/imported/piedra roja.png-11886d6d34966c48f47cfae34de587ec.ctex"]
 
 [params]
 
