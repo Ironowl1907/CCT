@@ -42,7 +42,7 @@ scale = Vector2(9.29688, 0.40625)
 texture = ExtResource("1_0a48m")
 
 [node name="tacho" type="Node2D" parent="."]
-position = Vector2(614, 549)
+position = Vector2(614, 561)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="tacho"]
 
@@ -56,5 +56,41 @@ texture = ExtResource("2_gjoew")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tacho/Area2D"]
+position = Vector2(-2.5, -13)
+shape = SubResource("RectangleShape2D_qf1q2")
+
+[node name="tacho2" type="Node2D" parent="."]
+position = Vector2(835, 557)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="tacho2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tacho2/StaticBody2D"]
+polygon = PackedVector2Array(-99, -74, -83, -74, -83, 53, 86, 54, 86, -82, 100, -82, 101, 67, -100, 66)
+
+[node name="tacho" type="Sprite2D" parent="tacho2"]
+texture = ExtResource("2_gjoew")
+
+[node name="Area2D" type="Area2D" parent="tacho2"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tacho2/Area2D"]
+position = Vector2(-2.5, -13)
+shape = SubResource("RectangleShape2D_qf1q2")
+
+[node name="tacho3" type="Node2D" parent="."]
+position = Vector2(1041, 561)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="tacho3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tacho3/StaticBody2D"]
+polygon = PackedVector2Array(-99, -74, -83, -74, -83, 53, 86, 54, 86, -82, 100, -82, 101, 67, -100, 66)
+
+[node name="tacho" type="Sprite2D" parent="tacho3"]
+texture = ExtResource("2_gjoew")
+
+[node name="Area2D" type="Area2D" parent="tacho3"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tacho3/Area2D"]
 position = Vector2(-2.5, -13)
 shape = SubResource("RectangleShape2D_qf1q2")
