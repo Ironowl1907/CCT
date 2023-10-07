@@ -16,8 +16,8 @@ func _process(delta):
 	
 	position.y += Yvel * delta
 	if (Yvel > 0):
-		Yvel -= 0.1
+		Yvel -= 2
 	if (Yvel < 0):
-		Yvel += 0.1
+		Yvel += 2
 		
 	print (Yvel)

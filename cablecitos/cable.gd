@@ -1,8 +1,6 @@
 extends Area2D
 
-var RotVal = randi_range(10, 100)
-
-
+var type;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,4 +9,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	rotation_degrees += RotVal * delta
+	pass
+
+
+func _on_mouse_entered():
+	print(type)
+
+
+func _on_mouse_exited():
+	print(type)

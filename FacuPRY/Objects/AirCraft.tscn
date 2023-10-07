@@ -6,8 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kp22x"]
 size = Vector2(128, 127)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="AirCraft" type="CharacterBody2D"]
 position = Vector2(489, 298)
+scale = Vector2(2.1286, 0.217961)
 script = ExtResource("1_kh5ma")
 
 [node name="Skin" type="Sprite2D" parent="."]
