@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwqwlje2hrsow"]
+[gd_scene load_steps=5 format=3 uid="uid://dwqwlje2hrsow"]
 
 [ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="1_xaamx"]
 [ext_resource type="Script" path="res://lanzamiento/rocket.gd" id="2_t2pw2"]
 [ext_resource type="Texture2D" uid="uid://coodkx354aln2" path="res://icon.svg" id="2_ufbb4"]
+[ext_resource type="Script" path="res://lanzamiento/shake.gd" id="4_2wbsx"]
 
 [node name="balance" type="Node2D"]
 
@@ -19,3 +20,23 @@ scale = Vector2(0.245278, 0.245278)
 texture = ExtResource("2_ufbb4")
 
 [node name="updateTimer" type="Timer" parent="rocket"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="rocket"]
+position = Vector2(-0.500427, 36.7817)
+scale = Vector2(5.20672, 0.204389)
+amount = 80
+lifetime = 0.7
+randomness = 1.0
+lifetime_randomness = 0.57
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+gravity = Vector2(0, 2000)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(1, 0.647059, 0, 1)
+hue_variation_min = 1.0
+hue_variation_max = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+script = ExtResource("4_2wbsx")
