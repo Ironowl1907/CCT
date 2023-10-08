@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://recursos/verifier.gd" id="6_3b3ha"]
 [ext_resource type="Script" path="res://recursos/tacho.gd" id="7_gcphc"]
 [ext_resource type="Script" path="res://recursos/filler.gd" id="8_ucv4p"]
-[ext_resource type="Texture2D" uid="uid://dgw2t6xq7mlof" path="res://sprites/PAISAJE.png" id="8_ycmro"]
+[ext_resource type="Texture2D" uid="uid://381d6i4qqced" path="res://sprites/PAISAJE.png" id="8_ycmro"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j41ou"]
 

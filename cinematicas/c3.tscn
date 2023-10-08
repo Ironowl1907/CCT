@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjhljbvyc8uhg"]
+[gd_scene load_steps=8 format=3 uid="uid://bjhljbvyc8uhg"]
 
 [ext_resource type="Texture2D" uid="uid://cgmebb38blamr" path="res://sprites/kfkufi7gf87r75fufi7i7.png" id="1_o1u3f"]
 [ext_resource type="Texture2D" uid="uid://bgo55wf7ijsj6" path="res://sprites/coheteÑAWOIHY.png" id="2_ota0x"]
@@ -7,6 +7,12 @@
 
 [sub_resource type="Gradient" id="Gradient_xd4q5"]
 colors = PackedColorArray(0.745098, 0.976471, 0, 1, 0.794443, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbcsm"]
+bg_color = Color(0.466667, 0.466667, 0.466667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fl4ee"]
+bg_color = Color(0.666667, 0.666667, 0.666667, 1)
 
 [node name="c3" type="Node2D"]
 
@@ -112,5 +118,17 @@ autostart = true
 [node name="textFiller" type="Timer" parent="text/text"]
 wait_time = 0.02
 
+[node name="Button" type="Button" parent="."]
+offset_left = 1726.0
+offset_top = 344.0
+offset_right = 1871.0
+offset_bottom = 378.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_wbcsm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fl4ee")
+text = "Continuar"
+
 [connection signal="timeout" from="text/text/intialTimer" to="text/text" method="_on_intial_timer_timeout"]
 [connection signal="timeout" from="text/text/textFiller" to="text/text" method="_on_text_filler_timeout"]
+[connection signal="pressed" from="Button" to="cohete" method="_on_button_pressed"]
