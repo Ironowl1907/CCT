@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://cablecitos/Scene/main.gd" id="1_8c1on"]
 [ext_resource type="PackedScene" uid="uid://clu7vyaa3gs8j" path="res://cablecitos/cables/cable.tscn" id="1_synt3"]
-[ext_resource type="Texture2D" uid="uid://cfpff53xukvlb" path="res://sprites/interfaz cables.png" id="2_lmrd5"]
+[ext_resource type="Texture2D" uid="uid://be2srm8rtqnh5" path="res://sprites/interfaz cables.png" id="2_lmrd5"]
 [ext_resource type="PackedScene" uid="uid://doviqyyh8v8b3" path="res://cablecitos/Connections/Connection.tscn" id="4_1f717"]
-[ext_resource type="Texture2D" uid="uid://3wn0w5awiu2w" path="res://sprites/piedra amarilla.png" id="5_atscy"]
+[ext_resource type="Texture2D" uid="uid://di1oymf1mxy6h" path="res://sprites/piedra amarilla.png" id="5_atscy"]
 [ext_resource type="Texture2D" uid="uid://bddj44oeg7x12" path="res://sprites/piedra celeste.png" id="6_47qw1"]
 [ext_resource type="Texture2D" uid="uid://0qm1cdnm44gf" path="res://sprites/piedra verde.png" id="7_vqo8n"]
 
