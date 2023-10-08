@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6giygd5d02s2"]
+[gd_scene load_steps=19 format=3 uid="uid://c6giygd5d02s2"]
 
 [ext_resource type="Script" path="res://recursos/pelota.gd" id="2_r50qv"]
+[ext_resource type="AudioStream" uid="uid://crbh4ogspddtx" path="res://audio/mineral.wav" id="3_7y54q"]
 [ext_resource type="Texture2D" uid="uid://cnwildu28fhvc" path="res://sprites/piedra roja.png" id="3_wwrsm"]
 [ext_resource type="Texture2D" uid="uid://bddj44oeg7x12" path="res://sprites/piedra celeste.png" id="4_t6yxv"]
 [ext_resource type="Texture2D" uid="uid://0qm1cdnm44gf" path="res://sprites/piedra verde.png" id="5_cdoq2"]
 [ext_resource type="Script" path="res://recursos/verifier.gd" id="6_3b3ha"]
 [ext_resource type="Script" path="res://recursos/tacho.gd" id="7_gcphc"]
 [ext_resource type="Script" path="res://recursos/filler.gd" id="8_ucv4p"]
-[ext_resource type="Texture2D" uid="uid://381d6i4qqced" path="res://sprites/PAISAJE.png" id="8_ycmro"]
+[ext_resource type="Texture2D" uid="uid://dgw2t6xq7mlof" path="res://sprites/PAISAJE.png" id="8_ycmro"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j41ou"]
 
@@ -20,11 +21,47 @@ normal = Vector2(0, 1)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7cyv3"]
 normal = Vector2(1, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf1q2"]
+size = Vector2(72, 104)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ietpi"]
 size = Vector2(24, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf1q2"]
-size = Vector2(72, 104)
+[sub_resource type="Animation" id="Animation_hvhbe"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("verifier/transitioner/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_55x2h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("verifier/transitioner/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dbp7t"]
+_data = {
+"RESET": SubResource("Animation_55x2h"),
+"fade": SubResource("Animation_hvhbe")
+}
 
 [node name="recursos" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
@@ -48,126 +85,6 @@ shape = SubResource("WorldBoundaryShape2D_7cyv3")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level walls"]
 position = Vector2(1203, 659)
 polygon = PackedVector2Array(709, 133, 517, 13, 485, 13, 485, 157, 381, 157, 381, 13, 373, 13, 373, 157, 269, 157, 269, 13, 260.655, 13, 261, 157, 157, 157, 157, 13, 93, 13, 5, -99, -11, -99, -11, 182, 637, 181)
-
-[node name="pelotitas" type="Node" parent="."]
-
-[node name="pelotita" type="RigidBody2D" parent="pelotitas"]
-position = Vector2(101, 583)
-script = ExtResource("2_r50qv")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita"]
-texture_filter = 1
-position = Vector2(0, 3.05176e-05)
-scale = Vector2(6, 6)
-texture = ExtResource("3_wwrsm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita"]
-shape = SubResource("RectangleShape2D_ietpi")
-
-[node name="detector" type="Area2D" parent="pelotitas/pelotita"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita/detector"]
-shape = SubResource("RectangleShape2D_ietpi")
-
-[node name="pelotita2" type="RigidBody2D" parent="pelotitas"]
-position = Vector2(187, 518)
-script = ExtResource("2_r50qv")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita2"]
-texture_filter = 1
-position = Vector2(0, 3.05176e-05)
-scale = Vector2(6, 6)
-texture = ExtResource("3_wwrsm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita2"]
-shape = SubResource("RectangleShape2D_ietpi")
-
-[node name="detector" type="Area2D" parent="pelotitas/pelotita2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita2/detector"]
-shape = SubResource("RectangleShape2D_ietpi")
-
-[node name="pelotita3" type="RigidBody2D" parent="pelotitas"]
-position = Vector2(204, 597)
-script = ExtResource("2_r50qv")
-tipo = 2
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita3"]
-texture_filter = 1
-position = Vector2(0, 3.05176e-05)
-scale = Vector2(6, 6)
-texture = ExtResource("4_t6yxv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita3"]
-shape = SubResource("RectangleShape2D_ietpi")
-
-[node name="detector" type="Area2D" parent="pelotitas/pelotita3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita3/detector"]
-shape = SubResource("RectangleShape2D_ietpi")
-
-[node name="pelotita4" type="RigidBody2D" parent="pelotitas"]
-position = Vector2(143, 527)
-script = ExtResource("2_r50qv")
-tipo = 2
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita4"]
-texture_filter = 1
-position = Vector2(0, 3.05176e-05)
-scale = Vector2(6, 6)
-texture = ExtResource("4_t6yxv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita4"]
-shape = SubResource("RectangleShape2D_ietpi")
-
-[node name="detector" type="Area2D" parent="pelotitas/pelotita4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita4/detector"]
-shape = SubResource("RectangleShape2D_ietpi")
-
-[node name="pelotita5" type="RigidBody2D" parent="pelotitas"]
-position = Vector2(177, 574)
-script = ExtResource("2_r50qv")
-tipo = 3
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita5"]
-texture_filter = 1
-position = Vector2(0, 3.05176e-05)
-scale = Vector2(6, 6)
-texture = ExtResource("5_cdoq2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita5"]
-shape = SubResource("RectangleShape2D_ietpi")
-
-[node name="detector" type="Area2D" parent="pelotitas/pelotita5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita5/detector"]
-shape = SubResource("RectangleShape2D_ietpi")
-
-[node name="pelotita6" type="RigidBody2D" parent="pelotitas"]
-position = Vector2(61, 524)
-script = ExtResource("2_r50qv")
-tipo = 3
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="pelotitas/pelotita6"]
-texture_filter = 1
-position = Vector2(0, 3.05176e-05)
-scale = Vector2(6, 6)
-texture = ExtResource("5_cdoq2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita6"]
-shape = SubResource("RectangleShape2D_ietpi")
-
-[node name="detector" type="Area2D" parent="pelotitas/pelotita6"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita6/detector"]
-shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="verifier" type="Node" parent="."]
 script = ExtResource("6_3b3ha")
@@ -223,6 +140,158 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/tacho3/Area2D"]
 position = Vector2(52, 52)
 shape = SubResource("RectangleShape2D_qf1q2")
+
+[node name="pelotitas" type="Node" parent="verifier"]
+
+[node name="pelotita" type="RigidBody2D" parent="verifier/pelotitas"]
+position = Vector2(354, 342)
+script = ExtResource("2_r50qv")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="verifier/pelotitas/pelotita"]
+texture_filter = 1
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(6, 6)
+texture = ExtResource("3_wwrsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/pelotitas/pelotita"]
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="verifier/pelotitas/pelotita"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/pelotitas/pelotita/detector"]
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="verifier/pelotitas/pelotita"]
+stream = ExtResource("3_7y54q")
+
+[node name="pelotita2" type="RigidBody2D" parent="verifier/pelotitas"]
+position = Vector2(354, 342)
+script = ExtResource("2_r50qv")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="verifier/pelotitas/pelotita2"]
+texture_filter = 1
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(6, 6)
+texture = ExtResource("3_wwrsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/pelotitas/pelotita2"]
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="verifier/pelotitas/pelotita2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/pelotitas/pelotita2/detector"]
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="verifier/pelotitas/pelotita2"]
+stream = ExtResource("3_7y54q")
+
+[node name="pelotita3" type="RigidBody2D" parent="verifier/pelotitas"]
+position = Vector2(354, 342)
+script = ExtResource("2_r50qv")
+tipo = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="verifier/pelotitas/pelotita3"]
+texture_filter = 1
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(6, 6)
+texture = ExtResource("4_t6yxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/pelotitas/pelotita3"]
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="verifier/pelotitas/pelotita3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/pelotitas/pelotita3/detector"]
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="verifier/pelotitas/pelotita3"]
+stream = ExtResource("3_7y54q")
+
+[node name="pelotita4" type="RigidBody2D" parent="verifier/pelotitas"]
+position = Vector2(354, 342)
+script = ExtResource("2_r50qv")
+tipo = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="verifier/pelotitas/pelotita4"]
+texture_filter = 1
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(6, 6)
+texture = ExtResource("4_t6yxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/pelotitas/pelotita4"]
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="verifier/pelotitas/pelotita4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/pelotitas/pelotita4/detector"]
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="verifier/pelotitas/pelotita4"]
+stream = ExtResource("3_7y54q")
+
+[node name="pelotita5" type="RigidBody2D" parent="verifier/pelotitas"]
+position = Vector2(354, 342)
+script = ExtResource("2_r50qv")
+tipo = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="verifier/pelotitas/pelotita5"]
+texture_filter = 1
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(6, 6)
+texture = ExtResource("5_cdoq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/pelotitas/pelotita5"]
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="verifier/pelotitas/pelotita5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/pelotitas/pelotita5/detector"]
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="verifier/pelotitas/pelotita5"]
+stream = ExtResource("3_7y54q")
+
+[node name="pelotita6" type="RigidBody2D" parent="verifier/pelotitas"]
+position = Vector2(354, 342)
+script = ExtResource("2_r50qv")
+tipo = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="verifier/pelotitas/pelotita6"]
+texture_filter = 1
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(6, 6)
+texture = ExtResource("5_cdoq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/pelotitas/pelotita6"]
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="detector" type="Area2D" parent="verifier/pelotitas/pelotita6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="verifier/pelotitas/pelotita6/detector"]
+shape = SubResource("RectangleShape2D_ietpi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="verifier/pelotitas/pelotita6"]
+stream = ExtResource("3_7y54q")
+
+[node name="transitioner" type="AnimationPlayer" parent="verifier"]
+process_mode = 3
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_dbp7t")
+}
+
+[node name="ColorRect" type="ColorRect" parent="verifier/transitioner"]
+offset_left = -98.0
+offset_top = -70.0
+offset_right = 2031.0
+offset_bottom = 1208.0
+color = Color(0, 0, 0, 0)
 
 [node name="Paisaje" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -304,23 +373,30 @@ autostart = true
 [node name="textFiller" type="Timer" parent="text/text"]
 wait_time = 0.02
 
-[connection signal="mouse_entered" from="pelotitas/pelotita/detector" to="pelotitas/pelotita" method="_on_detector_mouse_entered"]
-[connection signal="mouse_exited" from="pelotitas/pelotita/detector" to="pelotitas/pelotita" method="_on_detector_mouse_exited"]
-[connection signal="mouse_entered" from="pelotitas/pelotita2/detector" to="pelotitas/pelotita2" method="_on_detector_mouse_entered"]
-[connection signal="mouse_exited" from="pelotitas/pelotita2/detector" to="pelotitas/pelotita2" method="_on_detector_mouse_exited"]
-[connection signal="mouse_entered" from="pelotitas/pelotita3/detector" to="pelotitas/pelotita3" method="_on_detector_mouse_entered"]
-[connection signal="mouse_exited" from="pelotitas/pelotita3/detector" to="pelotitas/pelotita3" method="_on_detector_mouse_exited"]
-[connection signal="mouse_entered" from="pelotitas/pelotita4/detector" to="pelotitas/pelotita4" method="_on_detector_mouse_entered"]
-[connection signal="mouse_exited" from="pelotitas/pelotita4/detector" to="pelotitas/pelotita4" method="_on_detector_mouse_exited"]
-[connection signal="mouse_entered" from="pelotitas/pelotita5/detector" to="pelotitas/pelotita5" method="_on_detector_mouse_entered"]
-[connection signal="mouse_exited" from="pelotitas/pelotita5/detector" to="pelotitas/pelotita5" method="_on_detector_mouse_exited"]
-[connection signal="mouse_entered" from="pelotitas/pelotita6/detector" to="pelotitas/pelotita6" method="_on_detector_mouse_entered"]
-[connection signal="mouse_exited" from="pelotitas/pelotita6/detector" to="pelotitas/pelotita6" method="_on_detector_mouse_exited"]
 [connection signal="body_entered" from="verifier/tacho/Area2D" to="verifier/tacho" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="verifier/tacho/Area2D" to="verifier/tacho" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="verifier/tacho2/Area2D" to="verifier/tacho2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="verifier/tacho2/Area2D" to="verifier/tacho2" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="verifier/tacho3/Area2D" to="verifier/tacho3" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="verifier/tacho3/Area2D" to="verifier/tacho3" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="verifier/pelotitas/pelotita" to="verifier/pelotitas/pelotita" method="_on_body_entered"]
+[connection signal="mouse_entered" from="verifier/pelotitas/pelotita/detector" to="verifier/pelotitas/pelotita" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="verifier/pelotitas/pelotita/detector" to="verifier/pelotitas/pelotita" method="_on_detector_mouse_exited"]
+[connection signal="body_entered" from="verifier/pelotitas/pelotita2" to="verifier/pelotitas/pelotita2" method="_on_body_entered"]
+[connection signal="mouse_entered" from="verifier/pelotitas/pelotita2/detector" to="verifier/pelotitas/pelotita2" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="verifier/pelotitas/pelotita2/detector" to="verifier/pelotitas/pelotita2" method="_on_detector_mouse_exited"]
+[connection signal="body_entered" from="verifier/pelotitas/pelotita3" to="verifier/pelotitas/pelotita3" method="_on_body_entered"]
+[connection signal="mouse_entered" from="verifier/pelotitas/pelotita3/detector" to="verifier/pelotitas/pelotita3" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="verifier/pelotitas/pelotita3/detector" to="verifier/pelotitas/pelotita3" method="_on_detector_mouse_exited"]
+[connection signal="body_entered" from="verifier/pelotitas/pelotita4" to="verifier/pelotitas/pelotita4" method="_on_body_entered"]
+[connection signal="mouse_entered" from="verifier/pelotitas/pelotita4/detector" to="verifier/pelotitas/pelotita4" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="verifier/pelotitas/pelotita4/detector" to="verifier/pelotitas/pelotita4" method="_on_detector_mouse_exited"]
+[connection signal="body_entered" from="verifier/pelotitas/pelotita5" to="verifier/pelotitas/pelotita5" method="_on_body_entered"]
+[connection signal="mouse_entered" from="verifier/pelotitas/pelotita5/detector" to="verifier/pelotitas/pelotita5" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="verifier/pelotitas/pelotita5/detector" to="verifier/pelotitas/pelotita5" method="_on_detector_mouse_exited"]
+[connection signal="body_entered" from="verifier/pelotitas/pelotita6" to="verifier/pelotitas/pelotita6" method="_on_body_entered"]
+[connection signal="mouse_entered" from="verifier/pelotitas/pelotita6/detector" to="verifier/pelotitas/pelotita6" method="_on_detector_mouse_entered"]
+[connection signal="mouse_exited" from="verifier/pelotitas/pelotita6/detector" to="verifier/pelotitas/pelotita6" method="_on_detector_mouse_exited"]
+[connection signal="animation_finished" from="verifier/transitioner" to="verifier" method="_on_transitioner_animation_finished"]
 [connection signal="timeout" from="text/text/intialTimer" to="text/text" method="_on_intial_timer_timeout"]
 [connection signal="timeout" from="text/text/textFiller" to="text/text" method="_on_text_filler_timeout"]
