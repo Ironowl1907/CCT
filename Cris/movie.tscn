@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://cm8c84ojqxnwp" path="res://sprites/12112121titan.png" id="1_124al"]
 [ext_resource type="Script" path="res://Cris/movie.gd" id="1_kl81o"]
 [ext_resource type="Texture2D" uid="uid://csalmeha5nx4m" path="res://sprites/cupula.png" id="2_l7ood"]
-[ext_resource type="Texture2D" uid="uid://bgo55wf7ijsj6" path="res://sprites/coheteÑAWOIHY.png" id="3_shwr6"]
+[ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="3_shwr6"]
 
 [sub_resource type="Animation" id="Animation_hyrl6"]
 resource_name = "caen las cupulas"
-length = 10.0
+length = 13.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -140,52 +140,28 @@ tracks/10/keys = {
 "update": 0,
 "values": [Vector2(1.38, 1.38), Vector2(1.4, 1.4), Vector2(3, 3)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Control:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 11.5, 13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
-[sub_resource type="Animation" id="Animation_w116c"]
+[sub_resource type="Animation" id="Animation_ymltn"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Coheteñawoihy:position")
+tracks/0/path = NodePath("Control:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(861, 372)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Coheteñawoihy/CPUParticles2D:amount")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Coheteñawoihy/CPUParticles2D:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Coheteñawoihy:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -194,7 +170,7 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kn57g"]
 _data = {
-"RESET": SubResource("Animation_w116c"),
+"RESET": SubResource("Animation_ymltn"),
 "caen las cupulas": SubResource("Animation_hyrl6")
 }
 
@@ -213,35 +189,33 @@ texture = ExtResource("1_124al")
 centered = false
 
 [node name="Cupula" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(838, 350)
+position = Vector2(838, 408)
 scale = Vector2(2, 2)
 texture = ExtResource("2_l7ood")
 
 [node name="Cupula2" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(802, 376)
+position = Vector2(802, 416)
 scale = Vector2(2, 2)
 texture = ExtResource("2_l7ood")
 
 [node name="Cupula3" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(874, 396)
+position = Vector2(874, 416)
 scale = Vector2(2, 2)
 texture = ExtResource("2_l7ood")
 
 [node name="Coheteñawoihy" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 texture_filter = 1
-position = Vector2(861, 372)
+position = Vector2(861, 386)
 texture = ExtResource("3_shwr6")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Coheteñawoihy"]
 position = Vector2(-0.500427, 36.7817)
 scale = Vector2(5.20672, 0.204389)
+emitting = false
 amount = 1
 lifetime = 0.2
 randomness = 1.0
@@ -257,10 +231,17 @@ hue_variation_max = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(855, 410)
-zoom = Vector2(1.38, 1.38)
+zoom = Vector2(3, 3)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="Control" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

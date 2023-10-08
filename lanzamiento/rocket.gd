@@ -6,6 +6,7 @@ var dupli = 16
 signal balanceGameOver
 var shouldMove = false
 var canDie = true
+var shouldDie = false
 
 func absolute(n):
 	if (n < 1):
@@ -67,7 +68,8 @@ func _process(delta):
 		elif (absolute(rotation_degrees) < 60):
 			$incline.texture = preload("res://sprites/bola roja.png")
 			rotationAccel = 4 * s * delta * dupli
-			get_tree().change_scene_to_file("res://Menus/Failure/main_menu.tscn") # <- Here it dies ////////////////////
+			shouldDie = true
+			get_parent().get_parent().get_node("transitioner").play("fade")
 		else:
 			rotationAccel = 0
 		
@@ -86,4 +88,7 @@ func _on_win_timer_timeout():
 	canDie = false
 
 func _on_transitioner_animation_finished(anim_name):
-	get_parent().get_parent().get_parent().c4()
+	if not shouldDie:
+		get_parent().get_parent().get_parent().c4()
+	else:
+		get_tree().change_scene_to_file("res://Menus/Failure/main_menu.tscn")
