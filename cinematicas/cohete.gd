@@ -5,4 +5,4 @@ func _process(delta):
 
 
 func _on_button_pressed() -> void:
-	get_parent().get_parent().c5()
+	get_parent().get_parent().c6()
