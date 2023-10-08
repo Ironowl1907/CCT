@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://c6giygd5d02s2"]
+[gd_scene load_steps=15 format=3 uid="uid://c6giygd5d02s2"]
 
 [ext_resource type="Script" path="res://recursos/pelota.gd" id="2_r50qv"]
-[ext_resource type="AudioStream" uid="uid://crbh4ogspddtx" path="res://audio/mineral.wav" id="3_7y54q"]
 [ext_resource type="Texture2D" uid="uid://cnwildu28fhvc" path="res://sprites/piedra roja.png" id="3_wwrsm"]
 [ext_resource type="Texture2D" uid="uid://bddj44oeg7x12" path="res://sprites/piedra celeste.png" id="4_t6yxv"]
 [ext_resource type="Texture2D" uid="uid://0qm1cdnm44gf" path="res://sprites/piedra verde.png" id="5_cdoq2"]
@@ -53,7 +52,7 @@ polygon = PackedVector2Array(709, 133, 517, 13, 485, 13, 485, 157, 381, 157, 381
 [node name="pelotitas" type="Node" parent="."]
 
 [node name="pelotita" type="RigidBody2D" parent="pelotitas"]
-position = Vector2(354, 342)
+position = Vector2(101, 583)
 script = ExtResource("2_r50qv")
 metadata/_edit_group_ = true
 
@@ -71,11 +70,8 @@ shape = SubResource("RectangleShape2D_ietpi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita/detector"]
 shape = SubResource("RectangleShape2D_ietpi")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="pelotitas/pelotita"]
-stream = ExtResource("3_7y54q")
-
 [node name="pelotita2" type="RigidBody2D" parent="pelotitas"]
-position = Vector2(354, 342)
+position = Vector2(187, 518)
 script = ExtResource("2_r50qv")
 metadata/_edit_group_ = true
 
@@ -93,11 +89,8 @@ shape = SubResource("RectangleShape2D_ietpi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita2/detector"]
 shape = SubResource("RectangleShape2D_ietpi")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="pelotitas/pelotita2"]
-stream = ExtResource("3_7y54q")
-
 [node name="pelotita3" type="RigidBody2D" parent="pelotitas"]
-position = Vector2(354, 342)
+position = Vector2(204, 597)
 script = ExtResource("2_r50qv")
 tipo = 2
 metadata/_edit_group_ = true
@@ -116,11 +109,8 @@ shape = SubResource("RectangleShape2D_ietpi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita3/detector"]
 shape = SubResource("RectangleShape2D_ietpi")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="pelotitas/pelotita3"]
-stream = ExtResource("3_7y54q")
-
 [node name="pelotita4" type="RigidBody2D" parent="pelotitas"]
-position = Vector2(354, 342)
+position = Vector2(143, 527)
 script = ExtResource("2_r50qv")
 tipo = 2
 metadata/_edit_group_ = true
@@ -139,11 +129,8 @@ shape = SubResource("RectangleShape2D_ietpi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita4/detector"]
 shape = SubResource("RectangleShape2D_ietpi")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="pelotitas/pelotita4"]
-stream = ExtResource("3_7y54q")
-
 [node name="pelotita5" type="RigidBody2D" parent="pelotitas"]
-position = Vector2(354, 342)
+position = Vector2(177, 574)
 script = ExtResource("2_r50qv")
 tipo = 3
 metadata/_edit_group_ = true
@@ -162,11 +149,8 @@ shape = SubResource("RectangleShape2D_ietpi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita5/detector"]
 shape = SubResource("RectangleShape2D_ietpi")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="pelotitas/pelotita5"]
-stream = ExtResource("3_7y54q")
-
 [node name="pelotita6" type="RigidBody2D" parent="pelotitas"]
-position = Vector2(354, 342)
+position = Vector2(61, 524)
 script = ExtResource("2_r50qv")
 tipo = 3
 metadata/_edit_group_ = true
@@ -184,9 +168,6 @@ shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita6/detector"]
 shape = SubResource("RectangleShape2D_ietpi")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="pelotitas/pelotita6"]
-stream = ExtResource("3_7y54q")
 
 [node name="verifier" type="Node" parent="."]
 script = ExtResource("6_3b3ha")
@@ -323,22 +304,16 @@ autostart = true
 [node name="textFiller" type="Timer" parent="text/text"]
 wait_time = 0.02
 
-[connection signal="body_entered" from="pelotitas/pelotita" to="pelotitas/pelotita" method="_on_body_entered"]
 [connection signal="mouse_entered" from="pelotitas/pelotita/detector" to="pelotitas/pelotita" method="_on_detector_mouse_entered"]
 [connection signal="mouse_exited" from="pelotitas/pelotita/detector" to="pelotitas/pelotita" method="_on_detector_mouse_exited"]
-[connection signal="body_entered" from="pelotitas/pelotita2" to="pelotitas/pelotita2" method="_on_body_entered"]
 [connection signal="mouse_entered" from="pelotitas/pelotita2/detector" to="pelotitas/pelotita2" method="_on_detector_mouse_entered"]
 [connection signal="mouse_exited" from="pelotitas/pelotita2/detector" to="pelotitas/pelotita2" method="_on_detector_mouse_exited"]
-[connection signal="body_entered" from="pelotitas/pelotita3" to="pelotitas/pelotita3" method="_on_body_entered"]
 [connection signal="mouse_entered" from="pelotitas/pelotita3/detector" to="pelotitas/pelotita3" method="_on_detector_mouse_entered"]
 [connection signal="mouse_exited" from="pelotitas/pelotita3/detector" to="pelotitas/pelotita3" method="_on_detector_mouse_exited"]
-[connection signal="body_entered" from="pelotitas/pelotita4" to="pelotitas/pelotita4" method="_on_body_entered"]
 [connection signal="mouse_entered" from="pelotitas/pelotita4/detector" to="pelotitas/pelotita4" method="_on_detector_mouse_entered"]
 [connection signal="mouse_exited" from="pelotitas/pelotita4/detector" to="pelotitas/pelotita4" method="_on_detector_mouse_exited"]
-[connection signal="body_entered" from="pelotitas/pelotita5" to="pelotitas/pelotita5" method="_on_body_entered"]
 [connection signal="mouse_entered" from="pelotitas/pelotita5/detector" to="pelotitas/pelotita5" method="_on_detector_mouse_entered"]
 [connection signal="mouse_exited" from="pelotitas/pelotita5/detector" to="pelotitas/pelotita5" method="_on_detector_mouse_exited"]
-[connection signal="body_entered" from="pelotitas/pelotita6" to="pelotitas/pelotita6" method="_on_body_entered"]
 [connection signal="mouse_entered" from="pelotitas/pelotita6/detector" to="pelotitas/pelotita6" method="_on_detector_mouse_entered"]
 [connection signal="mouse_exited" from="pelotitas/pelotita6/detector" to="pelotitas/pelotita6" method="_on_detector_mouse_exited"]
 [connection signal="body_entered" from="verifier/tacho/Area2D" to="verifier/tacho" method="_on_area_2d_body_entered"]
