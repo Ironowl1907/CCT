@@ -11,4 +11,8 @@ func _ready():
 
 func _process(_delta):
 	if (t1.goodCounter >= 2 and t2.goodCounter >= 2 and t3.goodCounter >= 2):
-		get_parent().get_parent().c2()
+		$transitioner.play("fade")
+
+
+func _on_transitioner_animation_finished(anim_name):
+	get_parent().get_parent().c2()

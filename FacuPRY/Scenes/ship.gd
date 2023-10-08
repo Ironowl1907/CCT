@@ -30,6 +30,7 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("space") and canShoot:
 		var bullet = preload("res://FacuPRY/Objects/bullet.tscn").instantiate()
+		$AudioStreamPlayer2D.play()
 		bullet.position = position
 		bullet.global_rotation = rotation
 		get_parent().add_child(bullet)

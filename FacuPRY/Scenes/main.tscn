@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bitk14stmrkp8"]
+[gd_scene load_steps=11 format=3 uid="uid://bitk14stmrkp8"]
 
 [ext_resource type="Script" path="res://FacuPRY/Scenes/spawne.gd" id="1_dptwc"]
 [ext_resource type="Script" path="res://FacuPRY/Scenes/ship.gd" id="2_b4pa3"]
-[ext_resource type="Texture2D" uid="uid://bgo55wf7ijsj6" path="res://sprites/coheteÑAWOIHY.png" id="3_qrk6n"]
+[ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="3_qrk6n"]
 [ext_resource type="Texture2D" uid="uid://bnpgk5tth4mk8" path="res://sprites/titan.png" id="4_udtbk"]
+[ext_resource type="AudioStream" uid="uid://cwr81jv0n03mt" path="res://audio/shoot.wav" id="5_j2rxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_js8fv"]
 size = Vector2(59, 141)
@@ -69,6 +70,9 @@ texture = ExtResource("3_qrk6n")
 [node name="shootingTimer" type="Timer" parent="CharacterBody2D"]
 wait_time = 2.0
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+stream = ExtResource("5_j2rxv")
 
 [node name="limits" type="StaticBody2D" parent="."]
 

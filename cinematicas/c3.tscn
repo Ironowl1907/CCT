@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjhljbvyc8uhg"]
+[gd_scene load_steps=8 format=3 uid="uid://npvw67ldl7bb"]
 
-[ext_resource type="Texture2D" uid="uid://cgmebb38blamr" path="res://sprites/kfkufi7gf87r75fufi7i7.png" id="1_o1u3f"]
-[ext_resource type="Texture2D" uid="uid://bgo55wf7ijsj6" path="res://sprites/coheteÑAWOIHY.png" id="2_ota0x"]
+[ext_resource type="Texture2D" uid="uid://cb47xhl2usxr2" path="res://sprites/kfkufi7gf87r75fufi7i7.png" id="1_o1u3f"]
+[ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="2_ota0x"]
 [ext_resource type="Script" path="res://cinematicas/cohete.gd" id="3_nwjn4"]
 [ext_resource type="Script" path="res://recursos/filler.gd" id="4_0eywu"]
 
