@@ -4,16 +4,16 @@
 [ext_resource type="Script" path="res://cablecitos/Connections/Connection.gd" id="1_vsrk4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nh380"]
-size = Vector2(73, 70)
+size = Vector2(80, 80)
 
 [node name="Connection" type="Area2D"]
 script = ExtResource("1_vsrk4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_nh380")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(90, 0)
-scale = Vector2(16, 11.5)
+scale = Vector2(20, 20)
 texture = ExtResource("1_0q4vl")
