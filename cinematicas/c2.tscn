@@ -1,17 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0cmpfkyx4xrj"]
+[gd_scene load_steps=7 format=3 uid="uid://d0cmpfkyx4xrj"]
 
-[ext_resource type="Texture2D" uid="uid://bnpgk5tth4mk8" path="res://sprites/titan.png" id="1_cftpx"]
+[ext_resource type="Texture2D" uid="uid://cb47xhl2usxr2" path="res://sprites/kfkufi7gf87r75fufi7i7.png" id="1_x7qml"]
 [ext_resource type="Script" path="res://recursos/filler.gd" id="2_d102a"]
 [ext_resource type="Script" path="res://cinematicas/rotate.gd" id="3_peetb"]
 [ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="4_0wfqf"]
+[ext_resource type="Texture2D" uid="uid://b4fdb38ge6yxe" path="res://sprites/marte.png" id="5_t4bxn"]
+
+[sub_resource type="Gradient" id="Gradient_tiss5"]
+colors = PackedColorArray(0.745098, 0.976471, 0, 1, 0.794443, 0, 0, 1)
 
 [node name="c1" type="Node2D"]
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(967, 418)
-scale = Vector2(10.0196, 10.0196)
-texture = ExtResource("1_cftpx")
+position = Vector2(809.824, 441.339)
+scale = Vector2(10.7265, 12.2468)
+texture = ExtResource("1_x7qml")
 
 [node name="text" type="Control" parent="."]
 layout_mode = 3
@@ -87,15 +91,37 @@ autostart = true
 wait_time = 0.02
 
 [node name="rocket" type="Node2D" parent="."]
-position = Vector2(840, 550)
+position = Vector2(665, 532)
 script = ExtResource("3_peetb")
 
 [node name="Sprite2D" type="Sprite2D" parent="rocket"]
 texture_filter = 1
-position = Vector2(518, 67)
+position = Vector2(573, 50)
 rotation = -3.12769
 scale = Vector2(3.51232, 3.51232)
 texture = ExtResource("4_0wfqf")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="rocket/Sprite2D"]
+position = Vector2(-0.11972, 33.1903)
+scale = Vector2(14.4909, 0.236251)
+amount = 80
+lifetime = 0.7
+randomness = 1.0
+lifetime_randomness = 0.57
+emission_shape = 3
+emission_rect_extents = Vector2(0.5, 1)
+gravity = Vector2(0, 0)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_tiss5")
+hue_variation_min = 1.0
+hue_variation_max = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(720, 515)
+scale = Vector2(11.8485, 11.8485)
+texture = ExtResource("5_t4bxn")
 
 [connection signal="timeout" from="text/text/intialTimer" to="text/text" method="_on_intial_timer_timeout"]
 [connection signal="timeout" from="text/text/textFiller" to="text/text" method="_on_text_filler_timeout"]

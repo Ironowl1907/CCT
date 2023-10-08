@@ -1,22 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwqwlje2hrsow"]
+[gd_scene load_steps=8 format=3 uid="uid://dwqwlje2hrsow"]
 
-[ext_resource type="Script" path="res://lanzamiento/balance.gd" id="1_jy3gv"]
-[ext_resource type="Texture2D" uid="uid://ppolam7y4ho4" path="res://sprites/cielo nocturno-tierra.png" id="1_pdwgg"]
-[ext_resource type="Texture2D" uid="uid://bgo55wf7ijsj6" path="res://sprites/coheteÑAWOIHY.png" id="1_xaamx"]
+[ext_resource type="Texture2D" uid="uid://df7o55xungcr7" path="res://sprites/cielo nocturno-tierra.png" id="1_pdwgg"]
+[ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="1_xaamx"]
 [ext_resource type="Script" path="res://lanzamiento/mover.gd" id="2_2cetx"]
 [ext_resource type="Script" path="res://lanzamiento/rocket.gd" id="2_t2pw2"]
-[ext_resource type="Texture2D" uid="uid://c16mgxu0o45do" path="res://sprites/bola verde.png" id="3_r6xcr"]
+[ext_resource type="Texture2D" uid="uid://4pysdnt3f0i0" path="res://sprites/bola verde.png" id="3_r6xcr"]
 [ext_resource type="Script" path="res://lanzamiento/shake.gd" id="4_2wbsx"]
-[ext_resource type="Texture2D" uid="uid://di6d2e5hg2rha" path="res://sprites/acelerometro.png" id="5_r0p4p"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlm05"]
-size = Vector2(107.593, 113.598)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m53ru"]
-size = Vector2(234, 180)
+[ext_resource type="Texture2D" uid="uid://kewhm4oqkgmp" path="res://sprites/acelerometro.png" id="5_r0p4p"]
 
 [node name="balance" type="Node2D"]
-script = ExtResource("1_jy3gv")
 
 [node name="ParallaxLayer" type="ParallaxBackground" parent="."]
 
@@ -83,20 +75,3 @@ texture_filter = 1
 position = Vector2(938, 456)
 scale = Vector2(3.97936, 3.97936)
 texture = ExtResource("5_r0p4p")
-
-[node name="rocketarea" type="Area2D" parent="mover"]
-position = Vector2(931, 563)
-scale = Vector2(3.99655, 3.99655)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mover/rocketarea"]
-position = Vector2(5.50475, -180.906)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_wlm05")
-
-[node name="goal" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="goal"]
-position = Vector2(1088, -82490)
-shape = SubResource("RectangleShape2D_m53ru")
-
-[connection signal="area_entered" from="goal" to="." method="_on_goal_area_entered"]
