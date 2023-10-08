@@ -1,22 +1,48 @@
 extends Area2D
 
 var type;
-var drawLine = true
+var detectClick = false
+var drawLine = false
+var permanentDraw = false
+
+var originalDraw
+
+func _process(delta):
+	if detectClick:
+		if Input.is_action_pressed("CLICK"):
+			%papa.tipoDeNodo = type
+			%papa.nodoOriginal = global_position
+			drawLine = true
+	
+	if detectClick and %papa.tipoDeNodo == type and (not Input.is_action_pressed("CLICK")):
+		permanentDraw = true
+		originalDraw = %papa.nodoOriginal
+	
+	if not Input.is_action_pressed("CLICK"):
+		drawLine = false
+	
+	queue_redraw()
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if (drawLine):
-		draw_line(self.global_position, get_global_mouse_position(), "black")
-
+func _draw() -> void:
+	var color
+	if (type == 1):
+		color = Color.YELLOW
+	elif (type == 2):
+		color = Color.BLUE
+	elif (type == 3):
+		color = Color.RED
+	else:
+		color = Color.FOREST_GREEN
+	
+	if (permanentDraw):
+		draw_line(originalDraw, Vector2(0, 0), color, 10)
+	elif (drawLine):
+		draw_line(Vector2(0, 0), get_local_mouse_position(), color, 10)
 
 func _on_mouse_entered():
-	drawLine = true
-
+	detectClick = true
 
 func _on_mouse_exited():
-	drawLine = false
+	%papa.tipoDeNodo = -1
+	detectClick = false
