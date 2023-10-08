@@ -18,7 +18,7 @@ offset_left = -5.0
 offset_top = -17.0
 offset_right = 6.0
 offset_bottom = 20.0
-color = Color(0.607843, 0.0509804, 0.184314, 1)
+color = Color(0.764706, 0.572549, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1.5)
@@ -36,6 +36,7 @@ emission_rect_extents = Vector2(1, 1)
 gravity = Vector2(0, 0)
 scale_amount_min = 5.0
 scale_amount_max = 5.0
+color = Color(0.905882, 0.662745, 0, 1)
 color_ramp = SubResource("Gradient_4xr3b")
 hue_variation_min = 1.0
 hue_variation_max = 1.0
