@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://FacuPRY/Scenes/spawne.gd" id="1_dptwc"]
 [ext_resource type="Script" path="res://FacuPRY/Scenes/ship.gd" id="2_b4pa3"]
-[ext_resource type="Texture2D" uid="uid://civrcjle5ndqa" path="res://sprites/coheteÑAWOIHY.png" id="3_qrk6n"]
+[ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="3_qrk6n"]
 [ext_resource type="Texture2D" uid="uid://bnpgk5tth4mk8" path="res://sprites/titan.png" id="4_udtbk"]
-[ext_resource type="AudioStream" uid="uid://hchsfc52op1h" path="res://audio/shoot.wav" id="5_j2rxv"]
+[ext_resource type="AudioStream" uid="uid://cwr81jv0n03mt" path="res://audio/shoot.wav" id="5_j2rxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_js8fv"]
 size = Vector2(59, 141)

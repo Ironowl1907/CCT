@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://66iaw14dcqxb"]
 
-[ext_resource type="Texture2D" uid="uid://civrcjle5ndqa" path="res://sprites/coheteÑAWOIHY.png" id="1_c7kay"]
+[ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="1_c7kay"]
 [ext_resource type="Script" path="res://Menus/MainMenu/main_menu.gd" id="1_g8usv"]
-[ext_resource type="Texture2D" uid="uid://be8ind0xeouf8" path="res://sprites/fondo-inicio1.png" id="1_nthyf"]
+[ext_resource type="Texture2D" uid="uid://duwkoyrci5pg0" path="res://sprites/fondo-inicio1.png" id="1_nthyf"]
 
 [sub_resource type="Gradient" id="Gradient_4cmob"]
 offsets = PackedFloat32Array(0, 0.984791, 1)

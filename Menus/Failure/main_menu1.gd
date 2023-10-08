@@ -6,4 +6,5 @@ func _on_exit_pressed():
 
 
 func _on_again_pressed():
-	get_tree().change_scene_to_file("res://lanzamiento/balance.tscn")
+	get_node("/root/Main").add_child(preload("res://lanzamiento/balance.tscn").instantiate())
+	queue_free()

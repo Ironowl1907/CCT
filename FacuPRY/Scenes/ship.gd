@@ -44,10 +44,10 @@ func _physics_process(_delta):
 
 	velocity = spee * Vector2(0, 1).rotated(rotation)
 	move_and_slide()
-	for index in get_slide_collision_count():
-		var collision = get_slide_collision(index)
-		if collision.get_collider().name != "limits":
-			get_tree().change_scene_to_file("res://Menus/Failure/main_menu1.tscn") # <- Here it dies ////////////////////
+#	for index in get_slide_collision_count():
+#		var collision = get_slide_collision(index)
+#		if collision.get_collider().name != "limits":
+#			get_tree().change_scene_to_file("res://Menus/Failure/main_menu1.tscn") # <- Here it dies ////////////////////
 
 
 func _on_shooting_timer_timeout():

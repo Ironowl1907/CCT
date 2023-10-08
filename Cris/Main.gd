@@ -21,6 +21,7 @@ func c3() -> void:
 	add_child(cut3.instantiate())
 	
 func c4() -> void:
+	get_node("/root").print_tree_pretty()
 	get_children()[0].queue_free()
 	add_child(cut4.instantiate())
 	

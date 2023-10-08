@@ -2,9 +2,9 @@ extends Node2D
 
 func _process(delta):
 	if rotation_degrees < 200:
-		rotation_degrees += 30 * delta
+		rotation_degrees += 50 * delta
 	else:
-		move_local_y(2)
+		move_local_y(10)
 
 
 func _on_button_pressed() -> void:

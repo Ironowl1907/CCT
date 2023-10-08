@@ -37,21 +37,6 @@ func _process(delta):
 		else:
 			s = -1
 	
-		if (absolute(rotation_degrees) < 10):
-			rotationAccel = 1 * s * delta * dupli
-		elif (absolute(rotation_degrees) < 20):
-			rotationAccel = 2 * s * delta * dupli
-			$incline.texture = preload("res://sprites/bola verde.png")
-		elif (absolute(rotation_degrees) < 40):
-			rotationAccel = 3 * s * delta * dupli
-			$incline.texture = preload("res://sprites/bola celeste.png")
-		elif (absolute(rotation_degrees) < 60):
-			$incline.texture = preload("res://sprites/bola roja.png")
-			rotationAccel = 4 * s * delta * dupli
-			emit_signal("balanceGameOver")
-		else:
-			rotationAccel = 0
-	
 		if Input.is_action_pressed("ui_left"):
 			rotationAccel -= 70 * delta
 		elif Input.is_action_pressed("ui_right"):
@@ -87,8 +72,10 @@ func _on_win_timer_timeout():
 	get_parent().get_parent().get_node("transitioner").play("fade")
 	canDie = false
 
-func _on_transitioner_animation_finished(anim_name):
+func _on_transitioner_animation_finished(_anim_name):
 	if not shouldDie:
-		get_parent().get_parent().c4()
+		get_node("/root").print_tree_pretty()
+		get_node("/root/Main").c4()
 	else:
-		get_tree().change_scene_to_file("res://Menus/Failure/main_menu2.tscn")
+		get_parent().get_parent().queue_free()
+		get_node("/root").add_child(preload("res://Menus/Failure/main_menu1.tscn").instantiate())
