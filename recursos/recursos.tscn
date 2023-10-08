@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://0qm1cdnm44gf" path="res://sprites/piedra verde.png" id="5_cdoq2"]
 [ext_resource type="Script" path="res://recursos/verifier.gd" id="6_3b3ha"]
 [ext_resource type="Script" path="res://recursos/tacho.gd" id="7_gcphc"]
-[ext_resource type="Texture2D" uid="uid://381d6i4qqced" path="res://sprites/PAISAJE.png" id="8_ycmro"]
+[ext_resource type="Texture2D" uid="uid://dgw2t6xq7mlof" path="res://sprites/PAISAJE.png" id="8_ycmro"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j41ou"]
 
@@ -62,13 +62,11 @@ scale = Vector2(6, 6)
 texture = ExtResource("3_wwrsm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="detector" type="Area2D" parent="pelotitas/pelotita"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita/detector"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="pelotita2" type="RigidBody2D" parent="pelotitas"]
@@ -83,13 +81,11 @@ scale = Vector2(6, 6)
 texture = ExtResource("3_wwrsm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita2"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="detector" type="Area2D" parent="pelotitas/pelotita2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita2/detector"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="pelotita3" type="RigidBody2D" parent="pelotitas"]
@@ -105,13 +101,11 @@ scale = Vector2(6, 6)
 texture = ExtResource("4_t6yxv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita3"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="detector" type="Area2D" parent="pelotitas/pelotita3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita3/detector"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="pelotita4" type="RigidBody2D" parent="pelotitas"]
@@ -127,13 +121,11 @@ scale = Vector2(6, 6)
 texture = ExtResource("4_t6yxv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita4"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="detector" type="Area2D" parent="pelotitas/pelotita4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita4/detector"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="pelotita5" type="RigidBody2D" parent="pelotitas"]
@@ -149,13 +141,11 @@ scale = Vector2(6, 6)
 texture = ExtResource("5_cdoq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita5"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="detector" type="Area2D" parent="pelotitas/pelotita5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita5/detector"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="pelotita6" type="RigidBody2D" parent="pelotitas"]
@@ -171,13 +161,11 @@ scale = Vector2(6, 6)
 texture = ExtResource("5_cdoq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita6"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="detector" type="Area2D" parent="pelotitas/pelotita6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pelotitas/pelotita6/detector"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ietpi")
 
 [node name="verifier" type="Node" parent="."]

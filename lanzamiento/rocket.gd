@@ -1,0 +1,40 @@
+extends Sprite2D
+
+var rotationAccel = 0
+var s = 1
+var dupli = 16
+
+func absolute(n):
+	if (n < 1):
+		return n * -1
+	else:
+		return n
+
+func _process(delta):
+	if rotation_degrees == 0:
+		rotationAccel = randi_range(1, -1) 
+		s = rotationAccel
+		
+	if (rotation_degrees > 0):
+		s = 1
+	else:
+		s = -1
+	
+	if (absolute(rotation_degrees) < 10):
+		rotationAccel = 1 * s * delta * dupli
+	elif (absolute(rotation_degrees) < 20):
+		rotationAccel = 2 * s * delta * dupli
+	elif (absolute(rotation_degrees) < 30):
+		rotationAccel = 3 * s * delta * dupli
+	elif (absolute(rotation_degrees) < 60):
+		rotationAccel = 4 * s * delta * dupli
+	else:
+		print("BOOM")
+		rotationAccel = 0
+	
+	if Input.is_action_pressed("ui_left"):
+		rotationAccel -= 1
+	elif Input.is_action_pressed("ui_right"):
+		rotationAccel += 1
+
+	rotation_degrees += rotationAccel

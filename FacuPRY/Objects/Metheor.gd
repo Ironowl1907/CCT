@@ -13,3 +13,4 @@ func _process(delta):
 		child.global_position = global_position
 		
 		get_parent().remove_child(self)
+	
