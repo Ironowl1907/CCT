@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0cmpfkyx4xrj"]
+[gd_scene load_steps=7 format=3 uid="uid://d0cmpfkyx4xrj"]
 
 [ext_resource type="Texture2D" uid="uid://cb47xhl2usxr2" path="res://sprites/kfkufi7gf87r75fufi7i7.png" id="1_x7qml"]
 [ext_resource type="Script" path="res://recursos/filler.gd" id="2_d102a"]
 [ext_resource type="Script" path="res://cinematicas/rotate.gd" id="3_peetb"]
 [ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="4_0wfqf"]
 [ext_resource type="Texture2D" uid="uid://b4fdb38ge6yxe" path="res://sprites/marte.png" id="5_t4bxn"]
+
+[sub_resource type="Gradient" id="Gradient_tiss5"]
+colors = PackedColorArray(0.745098, 0.976471, 0, 1, 0.794443, 0, 0, 1)
 
 [node name="c1" type="Node2D"]
 
@@ -97,6 +100,22 @@ position = Vector2(573, 50)
 rotation = -3.12769
 scale = Vector2(3.51232, 3.51232)
 texture = ExtResource("4_0wfqf")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="rocket/Sprite2D"]
+position = Vector2(-0.11972, 33.1903)
+scale = Vector2(14.4909, 0.236251)
+amount = 80
+lifetime = 0.7
+randomness = 1.0
+lifetime_randomness = 0.57
+emission_shape = 3
+emission_rect_extents = Vector2(0.5, 1)
+gravity = Vector2(0, 0)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_tiss5")
+hue_variation_min = 1.0
+hue_variation_max = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
