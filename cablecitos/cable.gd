@@ -9,7 +9,7 @@ var originalDraw
 
 func _process(delta):
 	if detectClick:
-		if Input.is_action_pressed("CLICK"):
+		if Input.is_action_just_pressed("CLICK"):
 			%papa.tipoDeNodo = type
 			%papa.nodoOriginal = global_position
 			drawLine = true
@@ -23,14 +23,13 @@ func _process(delta):
 	
 	queue_redraw()
 
-# Called when the node enters the scene tree for the first time.
 func _draw() -> void:
 	var color
 	if (type == 1):
 		color = Color.YELLOW
 	elif (type == 2):
 		color = Color.BLUE
-	elif (type == 3):
+	elif (type == 3): play smart or do 
 		color = Color.RED
 	else:
 		color = Color.FOREST_GREEN
