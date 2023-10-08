@@ -20,10 +20,8 @@ func _process(_delta):
 			var overlapping_sprite = overlapping_areas[0].get_node("Sprite2D")
 			if $Sprite2D.texture == overlapping_sprite.texture:
 				CheckCab = true
-				print ("Dou")
 			else:
 				CheckCab = false
-				print ("NoDou")
 	
 	if selected:
 		position = get_global_mouse_position()

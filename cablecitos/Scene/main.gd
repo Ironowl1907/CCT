@@ -29,5 +29,5 @@ func _draw() -> void:
 
 func _process(_delta):
 	if ($Cable.CheckCab and $Cable2.CheckCab and $Cable3.CheckCab and $Cable4.CheckCab):
-		print ("win")
+		get_parent().c3()
 	queue_redraw()
