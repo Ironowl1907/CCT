@@ -28,4 +28,6 @@ func _draw() -> void:
 	draw_line($Cable4.initalPos, $Cable4.position, Color.BLACK, 63)
 
 func _process(_delta):
+	if ($Cable.CheckCab and $Cable2.CheckCab and $Cable3.CheckCab and $Cable4.CheckCab):
+		print ("win")
 	queue_redraw()
