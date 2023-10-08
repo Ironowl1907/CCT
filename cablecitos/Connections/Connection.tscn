@@ -8,7 +8,7 @@ script/source = "extends Area2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var connected = false 
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nh380"]

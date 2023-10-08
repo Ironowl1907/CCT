@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://66iaw14dcqxb"]
+
+[ext_resource type="Texture2D" uid="uid://dja0pq87duq4t" path="res://sprites/coheteÑAWOIHY.png" id="1_c7kay"]
+[ext_resource type="Script" path="res://Menus/MainMenu/main_menu.gd" id="1_g8usv"]
+[ext_resource type="Texture2D" uid="uid://c3642oayjlwgc" path="res://sprites/fondo-inicio1.png" id="1_nthyf"]
+
+[sub_resource type="Gradient" id="Gradient_4cmob"]
+offsets = PackedFloat32Array(0, 0.984791, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g8usv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(953, 527)
+scale = Vector2(8, 8)
+texture = ExtResource("1_nthyf")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 629.0
+offset_top = 25.0
+offset_right = 1181.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 121
+text = "Titan City"
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 460.0
+offset_right = 766.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 149
+text = "     Play     "
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 788.0
+offset_right = 766.0
+offset_bottom = 1000.0
+theme_override_font_sizes/font_size = 149
+text = "Exit"
+
+[node name="Devs" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1542.0
+offset_top = 959.0
+offset_right = 1550.0
+offset_bottom = 967.0
+theme_override_font_sizes/font_size = 59
+text = "Developers"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1392.82, 570.818)
+rotation = 0.698132
+scale = Vector2(11, 11)
+texture = ExtResource("1_c7kay")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 2
+position = Vector2(1143, 869)
+rotation = 0.777261
+amount = 100
+emission_shape = 3
+emission_rect_extents = Vector2(43, 11)
+particle_flag_align_y = true
+spread = 132.15
+gravity = Vector2(-1000, 980)
+scale_amount_min = 2.0
+scale_amount_max = 16.0
+color_ramp = SubResource("Gradient_4cmob")
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
