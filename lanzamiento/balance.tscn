@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://dwqwlje2hrsow"]
 
-[ext_resource type="Texture2D" uid="uid://m4gv103rywo7" path="res://sprites/cielo nocturno-tierra.png" id="1_pdwgg"]
-[ext_resource type="Texture2D" uid="uid://civrcjle5ndqa" path="res://sprites/coheteÑAWOIHY.png" id="1_xaamx"]
-[ext_resource type="Texture2D" uid="uid://d1q2bqx2y8qtf" path="res://sprites/PAISAJE.png" id="1_yyc1a"]
+[ext_resource type="Texture2D" uid="uid://df7o55xungcr7" path="res://sprites/cielo nocturno-tierra.png" id="1_pdwgg"]
+[ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="1_xaamx"]
+[ext_resource type="Texture2D" uid="uid://dgw2t6xq7mlof" path="res://sprites/PAISAJE.png" id="1_yyc1a"]
 [ext_resource type="Script" path="res://lanzamiento/mover.gd" id="2_2cetx"]
 [ext_resource type="Script" path="res://lanzamiento/rocket.gd" id="2_t2pw2"]
-[ext_resource type="Texture2D" uid="uid://dtt3mr7wtajfu" path="res://sprites/bola verde.png" id="3_r6xcr"]
+[ext_resource type="Texture2D" uid="uid://4pysdnt3f0i0" path="res://sprites/bola verde.png" id="3_r6xcr"]
 [ext_resource type="Script" path="res://lanzamiento/shake.gd" id="4_2wbsx"]
-[ext_resource type="Texture2D" uid="uid://46ij8jh2rcue" path="res://sprites/acelerometro.png" id="5_r0p4p"]
+[ext_resource type="Texture2D" uid="uid://kewhm4oqkgmp" path="res://sprites/acelerometro.png" id="5_r0p4p"]
 [ext_resource type="Script" path="res://recursos/filler.gd" id="9_yhuvh"]
 
 [sub_resource type="Animation" id="Animation_xr4qw"]
@@ -109,7 +109,7 @@ texture = ExtResource("3_r6xcr")
 position = Vector2(-0.500427, 36.7817)
 scale = Vector2(5.20672, 0.204389)
 emitting = false
-amount = 800
+amount = 80
 lifetime = 0.7
 randomness = 1.0
 lifetime_randomness = 0.57
@@ -123,7 +123,7 @@ hue_variation_min = 1.0
 hue_variation_max = 1.0
 
 [node name="winTimer" type="Timer" parent="mover/rocket"]
-wait_time = 40.0
+wait_time = 30.0
 
 [node name="Camera2D" type="Camera2D" parent="mover"]
 position = Vector2(960, 540)
