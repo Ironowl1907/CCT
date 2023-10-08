@@ -11,7 +11,7 @@ func absolute(n):
 		return n
 
 func _ready():
-	get_parent().get_node("Camera2D").shake(100, 100, 10)
+	get_parent().get_node("Camera2D").shake(100, 100, 7)
 
 func _process(delta):
 	if rotation_degrees == 0:
@@ -27,16 +27,19 @@ func _process(delta):
 		rotationAccel = 1 * s * delta * dupli
 	elif (absolute(rotation_degrees) < 20):
 		rotationAccel = 2 * s * delta * dupli
+		$incline.texture = preload("res://sprites/bola verde.png")
 	elif (absolute(rotation_degrees) < 40):
 		rotationAccel = 3 * s * delta * dupli
+		$incline.texture = preload("res://sprites/bola celeste.png")
 	elif (absolute(rotation_degrees) < 60):
+		$incline.texture = preload("res://sprites/bola roja.png")
 		rotationAccel = 4 * s * delta * dupli
 	else:
 		rotationAccel = 0
 	
 	if Input.is_action_pressed("ui_left"):
-		rotationAccel -= 60 * delta
+		rotationAccel -= 70 * delta
 	elif Input.is_action_pressed("ui_right"):
-		rotationAccel += 60 * delta
+		rotationAccel += 70 * delta
 
 	rotation_degrees += rotationAccel

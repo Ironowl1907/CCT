@@ -1,27 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwqwlje2hrsow"]
+[gd_scene load_steps=8 format=3 uid="uid://dwqwlje2hrsow"]
 
+[ext_resource type="Texture2D" uid="uid://df7o55xungcr7" path="res://sprites/cielo nocturno-tierra.png" id="1_pdwgg"]
 [ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="1_xaamx"]
+[ext_resource type="Script" path="res://lanzamiento/mover.gd" id="2_2cetx"]
 [ext_resource type="Script" path="res://lanzamiento/rocket.gd" id="2_t2pw2"]
-[ext_resource type="Texture2D" uid="uid://coodkx354aln2" path="res://icon.svg" id="2_ufbb4"]
+[ext_resource type="Texture2D" uid="uid://4pysdnt3f0i0" path="res://sprites/bola verde.png" id="3_r6xcr"]
 [ext_resource type="Script" path="res://lanzamiento/shake.gd" id="4_2wbsx"]
+[ext_resource type="Texture2D" uid="uid://kewhm4oqkgmp" path="res://sprites/acelerometro.png" id="5_r0p4p"]
 
 [node name="balance" type="Node2D"]
 
-[node name="rocket" type="Sprite2D" parent="."]
+[node name="ParallaxLayer" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxLayer"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(897, -32)
+scale = Vector2(33.885, 33.885)
+texture = ExtResource("1_pdwgg")
+
+[node name="mover" type="Node2D" parent="."]
+script = ExtResource("2_2cetx")
+
+[node name="rocket" type="Sprite2D" parent="mover"]
 texture_filter = 1
 position = Vector2(931, 563)
 scale = Vector2(3.99655, 3.99655)
 texture = ExtResource("1_xaamx")
 script = ExtResource("2_t2pw2")
 
-[node name="incline" type="Sprite2D" parent="rocket"]
-position = Vector2(0.750671, -40.0345)
-scale = Vector2(0.245278, 0.245278)
-texture = ExtResource("2_ufbb4")
+[node name="incline" type="Sprite2D" parent="mover/rocket"]
+position = Vector2(1.50128, -42.5367)
+scale = Vector2(0.198728, 0.198728)
+texture = ExtResource("3_r6xcr")
 
-[node name="updateTimer" type="Timer" parent="rocket"]
+[node name="updateTimer" type="Timer" parent="mover/rocket"]
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="rocket"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="mover/rocket"]
 position = Vector2(-0.500427, 36.7817)
 scale = Vector2(5.20672, 0.204389)
 amount = 80
@@ -37,6 +54,12 @@ color = Color(1, 0.647059, 0, 1)
 hue_variation_min = 1.0
 hue_variation_max = 1.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="mover"]
 position = Vector2(960, 540)
 script = ExtResource("4_2wbsx")
+
+[node name="Sprite2D" type="Sprite2D" parent="mover"]
+texture_filter = 1
+position = Vector2(938, 456)
+scale = Vector2(3.97936, 3.97936)
+texture = ExtResource("5_r0p4p")
