@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0cmpfkyx4xrj"]
+[gd_scene load_steps=7 format=3 uid="uid://dvc6cfky8lkj6"]
 
-[ext_resource type="Texture2D" uid="uid://cb47xhl2usxr2" path="res://sprites/kfkufi7gf87r75fufi7i7.png" id="1_x7qml"]
+[ext_resource type="Texture2D" uid="uid://cgmebb38blamr" path="res://sprites/kfkufi7gf87r75fufi7i7.png" id="1_x7qml"]
 [ext_resource type="Script" path="res://recursos/filler.gd" id="2_d102a"]
 [ext_resource type="Script" path="res://cinematicas/rotate.gd" id="3_peetb"]
-[ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="4_0wfqf"]
-[ext_resource type="Texture2D" uid="uid://b4fdb38ge6yxe" path="res://sprites/marte.png" id="5_t4bxn"]
+[ext_resource type="Texture2D" uid="uid://bgo55wf7ijsj6" path="res://sprites/coheteÑAWOIHY.png" id="4_0wfqf"]
+[ext_resource type="Texture2D" uid="uid://dgry67aiu4opj" path="res://sprites/marte.png" id="5_nhgna"]
 
 [sub_resource type="Gradient" id="Gradient_tiss5"]
 colors = PackedColorArray(0.745098, 0.976471, 0, 1, 0.794443, 0, 0, 1)
@@ -121,7 +121,7 @@ hue_variation_max = 1.0
 texture_filter = 1
 position = Vector2(720, 515)
 scale = Vector2(11.8485, 11.8485)
-texture = ExtResource("5_t4bxn")
+texture = ExtResource("5_nhgna")
 
 [connection signal="timeout" from="text/text/intialTimer" to="text/text" method="_on_intial_timer_timeout"]
 [connection signal="timeout" from="text/text/textFiller" to="text/text" method="_on_text_filler_timeout"]

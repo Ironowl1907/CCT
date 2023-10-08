@@ -10,3 +10,5 @@ func _on_timer_timeout():
 		meteor.angular_velocity = randi_range(3, -3)
 		add_child(meteor)
 		asteroidCount += 1
+	else: 
+		get_parent().get_parent().c5()
