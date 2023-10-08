@@ -1,16 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://bitk14stmrkp8"]
+[gd_scene load_steps=7 format=3 uid="uid://bitk14stmrkp8"]
 
 [ext_resource type="Script" path="res://FacuPRY/Scenes/spawne.gd" id="1_dptwc"]
 [ext_resource type="Script" path="res://FacuPRY/Scenes/ship.gd" id="2_b4pa3"]
-[ext_resource type="Texture2D" uid="uid://coodkx354aln2" path="res://icon.svg" id="3_opfvy"]
+[ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="3_qrk6n"]
+[ext_resource type="Texture2D" uid="uid://bnpgk5tth4mk8" path="res://sprites/titan.png" id="4_udtbk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_js8fv"]
-size = Vector2(59, 326)
+size = Vector2(59, 141)
 
 [sub_resource type="Gradient" id="Gradient_rrfi6"]
 colors = PackedColorArray(0.891213, 0.322077, 7.70092e-07, 1, 0.794443, 0, 0, 1)
 
 [node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(102, 45.9999)
+scale = Vector2(17.4745, 17.4745)
+texture = ExtResource("4_udtbk")
 
 [node name="spawner" type="Node2D" parent="."]
 script = ExtResource("1_dptwc")
@@ -25,16 +32,12 @@ collision_layer = 5
 collision_mask = 5
 script = ExtResource("2_b4pa3")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-scale = Vector2(0.443396, 2.56342)
-texture = ExtResource("3_opfvy")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-1.5, 0)
+position = Vector2(3.5, -57.5)
 shape = SubResource("RectangleShape2D_js8fv")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="CharacterBody2D"]
-position = Vector2(0, 161)
+position = Vector2(-3, 11)
 scale = Vector2(20.8089, 0.816849)
 amount = 80
 lifetime = 0.7
@@ -42,12 +45,17 @@ randomness = 1.0
 lifetime_randomness = 0.57
 emission_shape = 3
 emission_rect_extents = Vector2(1, 1)
-linear_accel_min = 16.16
-linear_accel_max = 16.16
-scale_amount_min = 3.0
-scale_amount_max = 3.0
+gravity = Vector2(0, 0)
+scale_amount_min = 5.0
+scale_amount_max = 5.0
 color_ramp = SubResource("Gradient_rrfi6")
 hue_variation_min = 1.0
 hue_variation_max = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(4, -103)
+scale = Vector2(3, 3)
+texture = ExtResource("3_qrk6n")
 
 [connection signal="timeout" from="spawner/Timer" to="spawner" method="_on_timer_timeout"]

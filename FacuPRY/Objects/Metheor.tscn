@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://spkfjriqfmo1"]
+[gd_scene load_steps=6 format=3 uid="uid://spkfjriqfmo1"]
 
 [ext_resource type="Script" path="res://FacuPRY/Objects/Metheor.gd" id="1_iupwb"]
-[ext_resource type="Texture2D" uid="uid://coodkx354aln2" path="res://icon.svg" id="1_rmbvp"]
+[ext_resource type="Texture2D" uid="uid://cxugxj1klkarh" path="res://sprites/asteroide2.png" id="2_e5efs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x8434"]
 friction = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4asot"]
 size = Vector2(124, 124)
+
+[sub_resource type="Gradient" id="Gradient_3u6he"]
+colors = PackedColorArray(0.891213, 0.322077, 7.70092e-07, 1, 0.794443, 0, 0, 1)
 
 [node name="Metheor" type="RigidBody2D"]
 collision_layer = 7
@@ -20,9 +23,31 @@ angular_damp_mode = 1
 script = ExtResource("1_iupwb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.818598, 0.818598)
-texture = ExtResource("1_rmbvp")
+position = Vector2(9, -25)
+rotation = 1.50246
+scale = Vector2(1.12782, 1.12782)
+texture = ExtResource("2_e5efs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.815915, 0.815915)
 shape = SubResource("RectangleShape2D_4asot")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-3, 11)
+scale = Vector2(20.3228, 29.4297)
+emitting = false
+amount = 200
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.57
+emission_shape = 1
+emission_sphere_radius = 5.0
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_3u6he")
+hue_variation_min = 1.0
+hue_variation_max = 1.0

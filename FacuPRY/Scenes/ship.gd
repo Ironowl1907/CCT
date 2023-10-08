@@ -9,11 +9,9 @@ var gravity = 0
 var spee = 0
 
 func _physics_process(delta):
-	if Input.is_action_pressed("ui_down"):
-		spee += 5
 
 	# Handle Jump.
-	elif Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up"):
 		spee -= 5
 	
 	else:
