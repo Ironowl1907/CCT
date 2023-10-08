@@ -9,12 +9,16 @@ friction = 0.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4asot"]
 size = Vector2(124, 124)
 
-[sub_resource type="Gradient" id="Gradient_3u6he"]
-colors = PackedColorArray(0.891213, 0.322077, 7.70092e-07, 1, 0.794443, 0, 0, 1)
+[sub_resource type="Curve" id="Curve_th670"]
+min_value = -200.0
+max_value = 200.0
+bake_resolution = 99
+_data = [Vector2(0, 1), 0.0, 1041.61, 0, 0, Vector2(0.043956, 200), 0.0, 0.0, 0, 0, Vector2(0.967033, 200), 191.579, 0.0, 0, 0]
+point_count = 3
 
 [node name="Metheor" type="RigidBody2D"]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 6
+collision_mask = 6
 physics_material_override = SubResource("PhysicsMaterial_x8434")
 gravity_scale = 0.0
 linear_velocity = Vector2(-100, 0)
@@ -37,17 +41,19 @@ position = Vector2(-3, 11)
 scale = Vector2(20.3228, 29.4297)
 emitting = false
 amount = 200
-lifetime = 2.0
+lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 0.57
 emission_shape = 1
 emission_sphere_radius = 5.0
-initial_velocity_min = 10.0
-initial_velocity_max = 10.0
+gravity = Vector2(0, 0)
+radial_accel_min = 10.0
+radial_accel_max = 10.0
+radial_accel_curve = SubResource("Curve_th670")
 scale_amount_min = 5.0
 scale_amount_max = 5.0
-color_ramp = SubResource("Gradient_3u6he")
+color = Color(0.337255, 0.352941, 0.352941, 1)
 hue_variation_min = 1.0
 hue_variation_max = 1.0

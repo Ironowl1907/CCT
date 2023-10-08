@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bitk14stmrkp8"]
+[gd_scene load_steps=10 format=3 uid="uid://bitk14stmrkp8"]
 
 [ext_resource type="Script" path="res://FacuPRY/Scenes/spawne.gd" id="1_dptwc"]
 [ext_resource type="Script" path="res://FacuPRY/Scenes/ship.gd" id="2_b4pa3"]
@@ -9,7 +9,15 @@
 size = Vector2(59, 141)
 
 [sub_resource type="Gradient" id="Gradient_rrfi6"]
-colors = PackedColorArray(0.891213, 0.322077, 7.70092e-07, 1, 0.794443, 0, 0, 1)
+colors = PackedColorArray(0.745098, 0.976471, 0, 1, 0.794443, 0, 0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i6el0"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a4m5c"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4fnex"]
 
 [node name="Main" type="Node2D"]
 
@@ -23,7 +31,7 @@ texture = ExtResource("4_udtbk")
 script = ExtResource("1_dptwc")
 
 [node name="Timer" type="Timer" parent="spawner"]
-wait_time = 1.5
+wait_time = 0.7
 autostart = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -58,4 +66,21 @@ position = Vector2(4, -103)
 scale = Vector2(3, 3)
 texture = ExtResource("3_qrk6n")
 
+[node name="shootingTimer" type="Timer" parent="CharacterBody2D"]
+wait_time = 2.0
+one_shot = true
+
+[node name="limits" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limits"]
+shape = SubResource("WorldBoundaryShape2D_i6el0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="limits"]
+shape = SubResource("WorldBoundaryShape2D_a4m5c")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="limits"]
+position = Vector2(0, 1081)
+shape = SubResource("WorldBoundaryShape2D_4fnex")
+
 [connection signal="timeout" from="spawner/Timer" to="spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="CharacterBody2D/shootingTimer" to="CharacterBody2D" method="_on_shooting_timer_timeout"]
