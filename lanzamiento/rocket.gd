@@ -67,7 +67,7 @@ func _process(delta):
 		elif (absolute(rotation_degrees) < 60):
 			$incline.texture = preload("res://sprites/bola roja.png")
 			rotationAccel = 4 * s * delta * dupli
-			print("ACÁ PIERDE FACU")
+			get_tree().change_scene_to_file("res://Menus/Failure/main_menu.tscn") # <- Here it dies ////////////////////
 		else:
 			rotationAccel = 0
 		
