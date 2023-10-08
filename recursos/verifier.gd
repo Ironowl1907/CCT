@@ -15,4 +15,4 @@ func _process(_delta):
 
 
 func _on_transitioner_animation_finished(anim_name):
-	get_parent().get_parent().c2()
+	get_parent().get_parent().c3()

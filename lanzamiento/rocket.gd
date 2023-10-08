@@ -11,6 +11,7 @@ func absolute(n):
 		return n
 
 func _ready():
+	$winTimer.start()
 	get_parent().get_node("Camera2D").shake(100, 100, 7)
 
 func _process(delta):
@@ -44,3 +45,11 @@ func _process(delta):
 		rotationAccel += 70 * delta
 
 	rotation_degrees += rotationAccel
+
+
+#func _on_animation_player_animation_finished(anim_name):
+	
+
+
+func _on_win_timer_timeout():
+	get_parent().get_parent().get_parent().c4()
