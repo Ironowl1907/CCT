@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://clu7vyaa3gs8j" path="res://cablecitos/cables/cable.tscn" id="1_synt3"]
 [ext_resource type="Texture2D" uid="uid://cfpff53xukvlb" path="res://sprites/interfaz cables.png" id="2_lmrd5"]
 [ext_resource type="PackedScene" uid="uid://doviqyyh8v8b3" path="res://cablecitos/Connections/Connection.tscn" id="4_1f717"]
-[ext_resource type="Script" path="res://cablecitos/cables/cable2.gd" id="5_j36yb"]
-[ext_resource type="Script" path="res://cablecitos/cables/cable3.gd" id="6_vovkv"]
-[ext_resource type="Script" path="res://cablecitos/cables/cable4.gd" id="7_3x226"]
+[ext_resource type="Texture2D" uid="uid://3wn0w5awiu2w" path="res://sprites/piedra amarilla.png" id="5_atscy"]
+[ext_resource type="Texture2D" uid="uid://bddj44oeg7x12" path="res://sprites/piedra celeste.png" id="6_47qw1"]
+[ext_resource type="Texture2D" uid="uid://0qm1cdnm44gf" path="res://sprites/piedra verde.png" id="7_vqo8n"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8c1on")
@@ -37,17 +37,23 @@ position = Vector2(300, 352)
 [node name="Cable2" parent="." instance=ExtResource("1_synt3")]
 texture_filter = 1
 position = Vector2(300, 485)
-script = ExtResource("5_j36yb")
+
+[node name="Sprite2D" parent="Cable2" index="1"]
+texture = ExtResource("6_47qw1")
 
 [node name="Cable3" parent="." instance=ExtResource("1_synt3")]
 texture_filter = 1
 position = Vector2(300, 620)
-script = ExtResource("6_vovkv")
+
+[node name="Sprite2D" parent="Cable3" index="1"]
+texture = ExtResource("5_atscy")
 
 [node name="Cable4" parent="." instance=ExtResource("1_synt3")]
 texture_filter = 1
 position = Vector2(300, 756)
-script = ExtResource("7_3x226")
+
+[node name="Sprite2D" parent="Cable4" index="1"]
+texture = ExtResource("7_vqo8n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
@@ -60,3 +66,7 @@ position = Vector2(960, 540)
 [connection signal="mouse_exited" from="Cable3" to="Cable3" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Cable4" to="Cable4" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cable4" to="Cable4" method="_on_mouse_exited"]
+
+[editable path="Cable2"]
+[editable path="Cable3"]
+[editable path="Cable4"]
