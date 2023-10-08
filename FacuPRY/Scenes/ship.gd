@@ -46,7 +46,7 @@ func _physics_process(delta):
 	for index in get_slide_collision_count():
 		var collision = get_slide_collision(index)
 		if collision.get_collider().name != "limits":
-			print("LA MACA")
+			print("ACÁ PIERDE FACU")
 
 
 func _on_shooting_timer_timeout():

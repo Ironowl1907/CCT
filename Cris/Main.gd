@@ -22,3 +22,7 @@ func c4() -> void:
 	get_children()[0].queue_free()
 	add_child(cut4.instantiate())
 	
+func c5() -> void:
+	get_children()[0].queue_free()
+	add_child(cut5.instantiate())
+	
