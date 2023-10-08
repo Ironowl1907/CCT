@@ -1,44 +1,95 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwqwlje2hrsow"]
+[gd_scene load_steps=13 format=3 uid="uid://dwqwlje2hrsow"]
 
-[ext_resource type="Script" path="res://lanzamiento/balance.gd" id="1_d0gmh"]
-[ext_resource type="Texture2D" uid="uid://ppolam7y4ho4" path="res://sprites/cielo nocturno-tierra.png" id="1_pdwgg"]
-[ext_resource type="Texture2D" uid="uid://bgo55wf7ijsj6" path="res://sprites/coheteÑAWOIHY.png" id="1_xaamx"]
+[ext_resource type="Texture2D" uid="uid://df7o55xungcr7" path="res://sprites/cielo nocturno-tierra.png" id="1_pdwgg"]
+[ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="1_xaamx"]
+[ext_resource type="Texture2D" uid="uid://dgw2t6xq7mlof" path="res://sprites/PAISAJE.png" id="1_yyc1a"]
 [ext_resource type="Script" path="res://lanzamiento/mover.gd" id="2_2cetx"]
 [ext_resource type="Script" path="res://lanzamiento/rocket.gd" id="2_t2pw2"]
-[ext_resource type="Texture2D" uid="uid://c16mgxu0o45do" path="res://sprites/bola verde.png" id="3_r6xcr"]
+[ext_resource type="Texture2D" uid="uid://4pysdnt3f0i0" path="res://sprites/bola verde.png" id="3_r6xcr"]
 [ext_resource type="Script" path="res://lanzamiento/shake.gd" id="4_2wbsx"]
-[ext_resource type="Texture2D" uid="uid://di6d2e5hg2rha" path="res://sprites/acelerometro.png" id="5_r0p4p"]
+[ext_resource type="Texture2D" uid="uid://kewhm4oqkgmp" path="res://sprites/acelerometro.png" id="5_r0p4p"]
+[ext_resource type="Texture2D" uid="uid://coodkx354aln2" path="res://icon.svg" id="9_nr458"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ih4ri"]
-size = Vector2(118, 118)
+[sub_resource type="Animation" id="Animation_47o25"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xr4qw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_01hcp"]
+_data = {
+"RESET": SubResource("Animation_xr4qw"),
+"fade": SubResource("Animation_47o25")
+}
 
 [node name="balance" type="Node2D"]
-script = ExtResource("1_d0gmh")
 
 [node name="ParallaxLayer" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxLayer"]
-motion_scale = Vector2(0.05, 0.05)
-
-[node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer"]
-texture_filter = 1
-position = Vector2(2537, -2834)
-scale = Vector2(21.0342, 21.0342)
-texture = ExtResource("1_pdwgg")
+motion_scale = Vector2(0.1, 0.1)
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer"]
 texture_filter = 1
-position = Vector2(-345, -1537)
-scale = Vector2(21.0342, 21.0342)
+position = Vector2(897, -32)
+scale = Vector2(33.885, 33.885)
 texture = ExtResource("1_pdwgg")
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer"]
 texture_filter = 1
-position = Vector2(1054.34, -339.809)
-scale = Vector2(21.0342, 21.0342)
+position = Vector2(876, -4528)
+rotation = 3.13751
+scale = Vector2(33.885, 33.885)
 texture = ExtResource("1_pdwgg")
 
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer2"]
+texture_filter = 1
+position = Vector2(1063, 4869)
+scale = Vector2(38.7301, 38.7301)
+texture = ExtResource("1_yyc1a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_01hcp")
+}
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+visible = false
+offset_left = -5510.0
+offset_top = -5916.0
+offset_right = -5470.0
+offset_bottom = -5876.0
+scale = Vector2(385.759, 303.76)
+color = Color(0, 0, 0, 0)
+
 [node name="mover" type="Node2D" parent="."]
+position = Vector2(-144, 6305)
 script = ExtResource("2_2cetx")
 
 [node name="rocket" type="Sprite2D" parent="mover"]
@@ -71,6 +122,9 @@ color = Color(1, 0.647059, 0, 1)
 hue_variation_min = 1.0
 hue_variation_max = 1.0
 
+[node name="winTimer" type="Timer" parent="mover/rocket"]
+wait_time = 2.0
+
 [node name="Camera2D" type="Camera2D" parent="mover"]
 position = Vector2(960, 540)
 script = ExtResource("4_2wbsx")
@@ -81,16 +135,10 @@ position = Vector2(938, 456)
 scale = Vector2(3.97936, 3.97936)
 texture = ExtResource("5_r0p4p")
 
-[node name="Area2D" type="Area2D" parent="mover"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(786, 7086)
+scale = Vector2(15, 1)
+texture = ExtResource("9_nr458")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mover/Area2D"]
-position = Vector2(1043, 220)
-shape = SubResource("RectangleShape2D_ih4ri")
-
-[node name="goal" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="goal"]
-position = Vector2(1088, -82490)
-shape = SubResource("RectangleShape2D_ih4ri")
-
-[connection signal="area_entered" from="goal" to="." method="_on_goal_area_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="mover/rocket" method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="mover/rocket/winTimer" to="mover/rocket" method="_on_win_timer_timeout"]
