@@ -1,12 +1,49 @@
-[gd_scene load_steps=8 format=3 uid="uid://c32c8ncxnnhle"]
+[gd_scene load_steps=12 format=3 uid="uid://c32c8ncxnnhle"]
 
 [ext_resource type="Script" path="res://cablecitos/Scene/main.gd" id="1_8c1on"]
 [ext_resource type="PackedScene" uid="uid://clu7vyaa3gs8j" path="res://cablecitos/cables/cable.tscn" id="1_synt3"]
-[ext_resource type="Texture2D" uid="uid://cfpff53xukvlb" path="res://sprites/interfaz cables.png" id="2_lmrd5"]
+[ext_resource type="Texture2D" uid="uid://3gfms0xoivap" path="res://sprites/interfaz cables.png" id="2_lmrd5"]
 [ext_resource type="PackedScene" uid="uid://dd7rcuk52wndt" path="res://cablecitos/Connections/Connection.tscn" id="4_1f717"]
-[ext_resource type="Texture2D" uid="uid://3wn0w5awiu2w" path="res://sprites/piedra amarilla.png" id="5_atscy"]
+[ext_resource type="Texture2D" uid="uid://8qap4lk11ogd" path="res://sprites/piedra amarilla.png" id="5_atscy"]
 [ext_resource type="Texture2D" uid="uid://bddj44oeg7x12" path="res://sprites/piedra celeste.png" id="6_47qw1"]
 [ext_resource type="Texture2D" uid="uid://0qm1cdnm44gf" path="res://sprites/piedra verde.png" id="7_vqo8n"]
+[ext_resource type="Script" path="res://recursos/filler.gd" id="8_vgihm"]
+
+[sub_resource type="Animation" id="Animation_14e5h"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transitioner/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_edw7c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transitioner/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qyfxw"]
+_data = {
+"RESET": SubResource("Animation_edw7c"),
+"fade": SubResource("Animation_14e5h")
+}
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8c1on")
@@ -58,6 +95,91 @@ texture = ExtResource("7_vqo8n")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
 
+[node name="text" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 532.0
+offset_top = 760.0
+offset_right = 572.0
+offset_bottom = 800.0
+
+[node name="ColorRect" type="ColorRect" parent="text"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 3.0
+offset_right = 128.0
+offset_bottom = 43.0
+scale = Vector2(19.3504, 0.69558)
+color = Color(0.270588, 0.270588, 0.270588, 0.917647)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="text"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 3.0
+offset_right = 107.0
+offset_bottom = 43.0
+rotation = 1.5708
+scale = Vector2(19.3504, 0.69558)
+color = Color(0.270588, 0.270588, 0.270588, 0.917647)
+
+[node name="ColorRect4" type="ColorRect" parent="text"]
+layout_mode = 0
+offset_left = 833.0
+offset_top = 3.0
+offset_right = 849.0
+offset_bottom = 43.0
+rotation = 1.5708
+scale = Vector2(19.3504, 0.69558)
+color = Color(0.270588, 0.270588, 0.270588, 0.917647)
+
+[node name="ColorRect2" type="ColorRect" parent="text"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 285.0
+offset_right = 127.0
+offset_bottom = 325.0
+scale = Vector2(19.3504, 0.69558)
+color = Color(0.270588, 0.270588, 0.270588, 0.917647)
+
+[node name="ColorRect5" type="ColorRect" parent="text"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 26.0
+offset_right = 809.0
+offset_bottom = 290.0
+color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[node name="text" type="RichTextLabel" parent="text"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 22.0
+offset_right = 4146.0
+offset_bottom = 1712.0
+scale = Vector2(0.1725, 0.163333)
+theme_override_font_sizes/normal_font_size = 200
+script = ExtResource("8_vgihm")
+txt = "Parece que hay un problema con el ciruito electrico. Conecta los cables correctamente por su color arrastrandolos"
+
+[node name="intialTimer" type="Timer" parent="text/text"]
+wait_time = 0.7
+autostart = true
+
+[node name="textFiller" type="Timer" parent="text/text"]
+wait_time = 0.02
+
+[node name="transitioner" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qyfxw")
+}
+
+[node name="ColorRect" type="ColorRect" parent="transitioner"]
+offset_left = -212.0
+offset_top = -147.0
+offset_right = 2461.0
+offset_bottom = 1324.0
+color = Color(0, 0, 0, 0)
+
 [connection signal="mouse_entered" from="Cable" to="Cable" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cable" to="Cable" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Cable2" to="Cable2" method="_on_mouse_entered"]
@@ -66,6 +188,9 @@ position = Vector2(960, 540)
 [connection signal="mouse_exited" from="Cable3" to="Cable3" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Cable4" to="Cable4" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cable4" to="Cable4" method="_on_mouse_exited"]
+[connection signal="timeout" from="text/text/intialTimer" to="text/text" method="_on_intial_timer_timeout"]
+[connection signal="timeout" from="text/text/textFiller" to="text/text" method="_on_text_filler_timeout"]
+[connection signal="animation_finished" from="transitioner" to="." method="_on_transitioner_animation_finished"]
 
 [editable path="Cable2"]
 [editable path="Cable3"]

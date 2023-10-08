@@ -29,5 +29,9 @@ func _draw() -> void:
 
 func _process(_delta):
 	if ($Cable.CheckCab and $Cable2.CheckCab and $Cable3.CheckCab and $Cable4.CheckCab):
-		get_parent().c3()
+		$transitioner.play("fade")
 	queue_redraw()
+
+
+func _on_transitioner_animation_finished(anim_name):
+	get_parent().c3()
