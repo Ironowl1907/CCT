@@ -11,6 +11,7 @@ func _ready():
 	var green = preload("res://sprites/piedra verde.png")
 	
 	$Sprite2D.texture = yellow
+	var AcColor ="yellow"
 
 
 func _process(_delta):

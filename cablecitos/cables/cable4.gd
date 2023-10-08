@@ -12,6 +12,7 @@ func _ready():
 	var green = preload("res://sprites/piedra verde.png")
 	
 	$Sprite2D.texture = green
+	var AcColor = "green"
 
 func _process(_delta):
 	if Input.is_action_pressed("CLICK") and mouseOnTop:
