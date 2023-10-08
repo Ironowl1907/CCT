@@ -10,10 +10,3 @@ func _draw() -> void:
 
 func _process(_delta):
 	queue_redraw()
-
-
-
-
-#func AleaNum() -> int:
-#	return randi_range(1, 4)
-#

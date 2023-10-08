@@ -1,10 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://doviqyyh8v8b3"]
+[gd_scene load_steps=4 format=3 uid="uid://doviqyyh8v8b3"]
+
+[ext_resource type="Texture2D" uid="uid://cnwildu28fhvc" path="res://sprites/piedra roja.png" id="1_0q4vl"]
+[ext_resource type="Script" path="res://cablecitos/Connections/Connection.gd" id="1_vsrk4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nh380"]
 size = Vector2(73, 70)
 
 [node name="Connection" type="Area2D"]
+script = ExtResource("1_vsrk4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_nh380")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(90, 0)
+scale = Vector2(16, 11.5)
+texture = ExtResource("1_0q4vl")
