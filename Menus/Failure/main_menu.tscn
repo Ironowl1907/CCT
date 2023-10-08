@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj4w7ddd6kui4"]
+
+[ext_resource type="Script" path="res://Menus/MainMenu/main_menu.gd" id="1_xugpe"]
+[ext_resource type="Texture2D" uid="uid://c3642oayjlwgc" path="res://sprites/fondo-inicio1.png" id="2_r8ntq"]
+
+[node name="Fail" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.00100456
+script = ExtResource("1_xugpe")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(953, 527)
+scale = Vector2(8, 8)
+texture = ExtResource("2_r8ntq")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 629.0
+offset_top = 25.0
+offset_right = 1181.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 121
+text = "Try Again"
+
+[node name="Again" type="Button" parent="."]
+layout_mode = 0
+offset_left = 511.701
+offset_top = 298.321
+offset_right = 1314.7
+offset_bottom = 510.321
+theme_override_font_sizes/font_size = 149
+text = "     Again     "
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 469.461
+offset_top = 536.472
+offset_right = 1367.46
+offset_bottom = 748.472
+theme_override_font_sizes/font_size = 149
+text = "     Exit      "
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed" flags=18]

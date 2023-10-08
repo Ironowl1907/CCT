@@ -81,4 +81,5 @@ scale_amount_min = 2.0
 scale_amount_max = 16.0
 color_ramp = SubResource("Gradient_4cmob")
 
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
