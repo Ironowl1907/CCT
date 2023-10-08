@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0cmpfkyx4xrj"]
 
-[ext_resource type="Texture2D" uid="uid://cb47xhl2usxr2" path="res://sprites/kfkufi7gf87r75fufi7i7.png" id="1_x7qml"]
+[ext_resource type="Texture2D" uid="uid://cgmebb38blamr" path="res://sprites/kfkufi7gf87r75fufi7i7.png" id="1_x7qml"]
 [ext_resource type="Script" path="res://recursos/filler.gd" id="2_d102a"]
 [ext_resource type="Script" path="res://cinematicas/rotate.gd" id="3_peetb"]
-[ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="4_0wfqf"]
-[ext_resource type="Texture2D" uid="uid://b4fdb38ge6yxe" path="res://sprites/marte.png" id="5_nhgna"]
+[ext_resource type="Texture2D" uid="uid://bgo55wf7ijsj6" path="res://sprites/coheteÑAWOIHY.png" id="4_0wfqf"]
+[ext_resource type="Texture2D" uid="uid://dgry67aiu4opj" path="res://sprites/marte.png" id="5_nhgna"]
 
 [sub_resource type="Gradient" id="Gradient_tiss5"]
 colors = PackedColorArray(0.745098, 0.976471, 0, 1, 0.794443, 0, 0, 1)
@@ -88,7 +88,7 @@ wait_time = 0.7
 autostart = true
 
 [node name="textFiller" type="Timer" parent="text/text"]
-wait_time = 0.02
+wait_time = 0.05
 
 [node name="rocket" type="Node2D" parent="."]
 position = Vector2(665, 532)
