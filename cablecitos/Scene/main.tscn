@@ -1,37 +1,53 @@
-[gd_scene load_steps=5 format=3 uid="uid://c32c8ncxnnhle"]
+[gd_scene load_steps=8 format=3 uid="uid://c32c8ncxnnhle"]
 
 [ext_resource type="Script" path="res://cablecitos/Scene/main.gd" id="1_8c1on"]
 [ext_resource type="PackedScene" uid="uid://clu7vyaa3gs8j" path="res://cablecitos/cables/cable.tscn" id="1_synt3"]
 [ext_resource type="Texture2D" uid="uid://be2srm8rtqnh5" path="res://sprites/interfaz cables.png" id="2_lmrd5"]
 [ext_resource type="PackedScene" uid="uid://doviqyyh8v8b3" path="res://cablecitos/Connections/Connection.tscn" id="4_1f717"]
+[ext_resource type="Script" path="res://cablecitos/cables/cable2.gd" id="5_j36yb"]
+[ext_resource type="Script" path="res://cablecitos/cables/cable3.gd" id="6_vovkv"]
+[ext_resource type="Script" path="res://cablecitos/cables/cable4.gd" id="7_3x226"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8c1on")
 
 [node name="Inter" type="Sprite2D" parent="."]
+show_behind_parent = true
 texture_filter = 1
 position = Vector2(960, 540)
 scale = Vector2(40, 22.5)
 texture = ExtResource("2_lmrd5")
 
 [node name="Connection" parent="." instance=ExtResource("4_1f717")]
-position = Vector2(1674, 355)
+position = Vector2(1638, 350)
+
+[node name="Connection2" parent="." instance=ExtResource("4_1f717")]
+position = Vector2(1636, 484)
+
+[node name="Connection3" parent="." instance=ExtResource("4_1f717")]
+position = Vector2(1636, 619)
+
+[node name="Connection4" parent="." instance=ExtResource("4_1f717")]
+position = Vector2(1639, 756)
 
 [node name="Cable" parent="." instance=ExtResource("1_synt3")]
 texture_filter = 1
-position = Vector2(285, 350)
+position = Vector2(300, 352)
 
 [node name="Cable2" parent="." instance=ExtResource("1_synt3")]
 texture_filter = 1
-position = Vector2(278, 756)
+position = Vector2(300, 485)
+script = ExtResource("5_j36yb")
 
 [node name="Cable3" parent="." instance=ExtResource("1_synt3")]
 texture_filter = 1
-position = Vector2(281, 618)
+position = Vector2(300, 620)
+script = ExtResource("6_vovkv")
 
 [node name="Cable4" parent="." instance=ExtResource("1_synt3")]
 texture_filter = 1
-position = Vector2(281, 485)
+position = Vector2(300, 756)
+script = ExtResource("7_3x226")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)

@@ -1,7 +1,7 @@
 extends Area2D
 
 var selected: bool = false
-var initalPos = Vector2(300,352)
+var initalPos = Vector2(300,620)
 var mouseOnTop = false
 
 
