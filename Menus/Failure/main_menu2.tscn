@@ -1,6 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://bs8nqipey855o"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" path="res://Menus/Failure/main_menu1.gd" id="1_mb4a5"]
+=======
+[ext_resource type="Script" path="res://Menus/Failure/main_menu2.gd" id="1_nhjy4"]
+>>>>>>> parent of 158d2a1 (error fix)
 [ext_resource type="Texture2D" uid="uid://be8ind0xeouf8" path="res://sprites/fondo-inicio1.png" id="2_lwf55"]
 [ext_resource type="Texture2D" uid="uid://bwaincob3r5vg" path="res://sprites/NAVE EXTR uno.png" id="3_vfcxr"]
 

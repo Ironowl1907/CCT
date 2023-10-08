@@ -109,7 +109,7 @@ texture = ExtResource("3_r6xcr")
 position = Vector2(-0.500427, 36.7817)
 scale = Vector2(5.20672, 0.204389)
 emitting = false
-amount = 80
+amount = 800
 lifetime = 0.7
 randomness = 1.0
 lifetime_randomness = 0.57
@@ -123,7 +123,7 @@ hue_variation_min = 1.0
 hue_variation_max = 1.0
 
 [node name="winTimer" type="Timer" parent="mover/rocket"]
-wait_time = 30.0
+wait_time = 40.0
 
 [node name="Camera2D" type="Camera2D" parent="mover"]
 position = Vector2(960, 540)
