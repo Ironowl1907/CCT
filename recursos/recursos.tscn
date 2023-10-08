@@ -84,7 +84,7 @@ shape = SubResource("WorldBoundaryShape2D_7cyv3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level walls"]
 position = Vector2(1203, 659)
-polygon = PackedVector2Array(709, 133, 517, 13, 485, 13, 485, 157, 381, 157, 381, 13, 373, 13, 373, 157, 269, 157, 269, 13, 260.655, 13, 261, 157, 157, 157, 157, 13, 93, 13, 5, -99, -11, -99, -11, 182, 637, 181)
+polygon = PackedVector2Array(763, 130, 517, 13, 485, 13, 485, 157, 381, 157, 381, 13, 373, 13, 373, 157, 269, 157, 269, 13, 260.655, 13, 261, 157, 157, 157, 157, 13, 93, 13, 5, -99, -11, -99, -11, 182, 763, 173)
 
 [node name="verifier" type="Node" parent="."]
 script = ExtResource("6_3b3ha")

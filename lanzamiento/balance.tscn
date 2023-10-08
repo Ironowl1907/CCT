@@ -123,6 +123,7 @@ hue_variation_min = 1.0
 hue_variation_max = 1.0
 
 [node name="winTimer" type="Timer" parent="mover/rocket"]
+wait_time = 30.0
 
 [node name="Camera2D" type="Camera2D" parent="mover"]
 position = Vector2(960, 540)

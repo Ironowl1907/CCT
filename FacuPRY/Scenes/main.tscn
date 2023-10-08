@@ -32,7 +32,7 @@ texture = ExtResource("4_udtbk")
 script = ExtResource("1_dptwc")
 
 [node name="Timer" type="Timer" parent="spawner"]
-wait_time = 0.7
+wait_time = 1.5
 autostart = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
