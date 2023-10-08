@@ -6,7 +6,3 @@ func _ready():
 	var _yellow = preload("res://sprites/piedra amarilla.png")
 	var _green = preload("res://sprites/piedra verde.png")
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass

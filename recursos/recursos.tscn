@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6giygd5d02s2"]
+[gd_scene load_steps=14 format=3 uid="uid://c6giygd5d02s2"]
 
 [ext_resource type="Script" path="res://recursos/pelota.gd" id="2_r50qv"]
 [ext_resource type="Texture2D" uid="uid://cnwildu28fhvc" path="res://sprites/piedra roja.png" id="3_wwrsm"]
@@ -6,8 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://0qm1cdnm44gf" path="res://sprites/piedra verde.png" id="5_cdoq2"]
 [ext_resource type="Script" path="res://recursos/verifier.gd" id="6_3b3ha"]
 [ext_resource type="Script" path="res://recursos/tacho.gd" id="7_gcphc"]
-[ext_resource type="Script" path="res://recursos/filler.gd" id="8_ucv4p"]
-[ext_resource type="Texture2D" uid="uid://dgw2t6xq7mlof" path="res://sprites/PAISAJE.png" id="8_ycmro"]
+[ext_resource type="Texture2D" uid="uid://381d6i4qqced" path="res://sprites/PAISAJE.png" id="8_ycmro"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j41ou"]
 
@@ -231,79 +230,6 @@ texture = ExtResource("8_ycmro")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="text" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 10.0
-offset_top = 45.0
-offset_right = 50.0
-offset_bottom = 85.0
-
-[node name="ColorRect" type="ColorRect" parent="text"]
-layout_mode = 0
-offset_left = 91.0
-offset_top = 3.0
-offset_right = 128.0
-offset_bottom = 43.0
-scale = Vector2(19.3504, 0.69558)
-color = Color(0.270588, 0.270588, 0.270588, 0.917647)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect3" type="ColorRect" parent="text"]
-layout_mode = 0
-offset_left = 91.0
-offset_top = 3.0
-offset_right = 107.0
-offset_bottom = 43.0
-rotation = 1.5708
-scale = Vector2(19.3504, 0.69558)
-color = Color(0.270588, 0.270588, 0.270588, 0.917647)
-
-[node name="ColorRect4" type="ColorRect" parent="text"]
-layout_mode = 0
-offset_left = 833.0
-offset_top = 3.0
-offset_right = 849.0
-offset_bottom = 43.0
-rotation = 1.5708
-scale = Vector2(19.3504, 0.69558)
-color = Color(0.270588, 0.270588, 0.270588, 0.917647)
-
-[node name="ColorRect2" type="ColorRect" parent="text"]
-layout_mode = 0
-offset_left = 90.0
-offset_top = 285.0
-offset_right = 127.0
-offset_bottom = 325.0
-scale = Vector2(19.3504, 0.69558)
-color = Color(0.270588, 0.270588, 0.270588, 0.917647)
-
-[node name="ColorRect5" type="ColorRect" parent="text"]
-layout_mode = 0
-offset_left = 89.0
-offset_top = 26.0
-offset_right = 809.0
-offset_bottom = 290.0
-color = Color(0.254902, 0.254902, 0.254902, 1)
-
-[node name="text" type="RichTextLabel" parent="text"]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 22.0
-offset_right = 4146.0
-offset_bottom = 1712.0
-scale = Vector2(0.1725, 0.163333)
-theme_override_font_sizes/normal_font_size = 200
-script = ExtResource("8_ucv4p")
-txt = "Para la colonizacion se van a necesitar recursos e investigacion. Para esto vamos a recolectar y almacenar en los contenedores cuarzo, silicio y carbonato de calcio. Separa los minerales en sus contenedores"
-
-[node name="intialTimer" type="Timer" parent="text/text"]
-wait_time = 0.7
-autostart = true
-
-[node name="textFiller" type="Timer" parent="text/text"]
-wait_time = 0.02
-
 [connection signal="mouse_entered" from="pelotitas/pelotita/detector" to="pelotitas/pelotita" method="_on_detector_mouse_entered"]
 [connection signal="mouse_exited" from="pelotitas/pelotita/detector" to="pelotitas/pelotita" method="_on_detector_mouse_exited"]
 [connection signal="mouse_entered" from="pelotitas/pelotita2/detector" to="pelotitas/pelotita2" method="_on_detector_mouse_entered"]
@@ -322,5 +248,3 @@ wait_time = 0.02
 [connection signal="body_exited" from="verifier/tacho2/Area2D" to="verifier/tacho2" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="verifier/tacho3/Area2D" to="verifier/tacho3" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="verifier/tacho3/Area2D" to="verifier/tacho3" method="_on_area_2d_body_exited"]
-[connection signal="timeout" from="text/text/intialTimer" to="text/text" method="_on_intial_timer_timeout"]
-[connection signal="timeout" from="text/text/textFiller" to="text/text" method="_on_text_filler_timeout"]

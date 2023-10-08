@@ -11,4 +11,4 @@ func _ready():
 
 func _process(_delta):
 	if (t1.goodCounter >= 2 and t2.goodCounter >= 2 and t3.goodCounter >= 2):
-		print("SO!")
+		get_parent().get_parent().c2()
