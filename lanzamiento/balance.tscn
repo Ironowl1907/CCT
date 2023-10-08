@@ -21,24 +21,12 @@ script = ExtResource("1_jy3gv")
 [node name="ParallaxLayer" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxLayer"]
-motion_scale = Vector2(0.05, 0.05)
-
-[node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer"]
-texture_filter = 1
-position = Vector2(2537, -2834)
-scale = Vector2(21.0342, 21.0342)
-texture = ExtResource("1_pdwgg")
+motion_scale = Vector2(0.1, 0.1)
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer"]
 texture_filter = 1
-position = Vector2(-345, -1537)
-scale = Vector2(21.0342, 21.0342)
-texture = ExtResource("1_pdwgg")
-
-[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer"]
-texture_filter = 1
-position = Vector2(1054.34, -339.809)
-scale = Vector2(21.0342, 21.0342)
+position = Vector2(897, -32)
+scale = Vector2(33.885, 33.885)
 texture = ExtResource("1_pdwgg")
 
 [node name="mover" type="Node2D" parent="."]
