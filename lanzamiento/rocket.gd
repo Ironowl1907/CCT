@@ -34,6 +34,7 @@ func _process(delta):
 	elif (absolute(rotation_degrees) < 60):
 		$incline.texture = preload("res://sprites/bola roja.png")
 		rotationAccel = 4 * s * delta * dupli
+		print("ACÁ PIERDE FACU")
 	else:
 		rotationAccel = 0
 	
