@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://clu7vyaa3gs8j"]
 
 [ext_resource type="Script" path="res://cablecitos/cables/cable.gd" id="1_qowvu"]
-[ext_resource type="Texture2D" uid="uid://coodkx354aln2" path="res://icon.svg" id="2_eejut"]
+[ext_resource type="Texture2D" uid="uid://cnwildu28fhvc" path="res://sprites/piedra roja.png" id="2_n0skw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbelo"]
 size = Vector2(128, 128)
@@ -14,4 +14,6 @@ script = ExtResource("1_qowvu")
 shape = SubResource("RectangleShape2D_fbelo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_eejut")
+position = Vector2(22, 17)
+scale = Vector2(21.875, 17.5)
+texture = ExtResource("2_n0skw")

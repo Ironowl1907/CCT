@@ -1,32 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://c32c8ncxnnhle"]
+[gd_scene load_steps=5 format=3 uid="uid://c32c8ncxnnhle"]
 
 [ext_resource type="Script" path="res://cablecitos/Scene/main.gd" id="1_8c1on"]
 [ext_resource type="PackedScene" uid="uid://clu7vyaa3gs8j" path="res://cablecitos/cables/cable.tscn" id="1_synt3"]
+[ext_resource type="Texture2D" uid="uid://noqwi5dfhr2a" path="res://sprites/Black-Square-PNG-Photos.png" id="2_hegfg"]
+[ext_resource type="PackedScene" uid="uid://doviqyyh8v8b3" path="res://cablecitos/Connections/Connection.tscn" id="4_1f717"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8c1on")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(126, 543)
+scale = Vector2(0.203125, 1)
+texture = ExtResource("2_hegfg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1828, 547)
+scale = Vector2(0.203125, 1)
+texture = ExtResource("2_hegfg")
+
+[node name="Connection" parent="." instance=ExtResource("4_1f717")]
+position = Vector2(1724, 157)
+
 [node name="Cable" parent="." instance=ExtResource("1_synt3")]
 position = Vector2(235, 159)
 
-[node name="Cable2" parent="." instance=ExtResource("1_synt3")]
-position = Vector2(1177, 333)
-
-[node name="Cable3" parent="." instance=ExtResource("1_synt3")]
-position = Vector2(657, 482)
-
-[node name="Cable4" parent="." instance=ExtResource("1_synt3")]
-position = Vector2(197, 446)
-
+[connection signal="input_event" from="Connection" to="." method="_on_connection_input_event"]
+[connection signal="input_event" from="Connection" to="Cable" method="_on_connection_input_event"]
 [connection signal="input_event" from="Cable" to="." method="_on_cable_input_event"]
 [connection signal="input_event" from="Cable" to="Cable" method="_on_input_event"]
 [connection signal="mouse_entered" from="Cable" to="." method="_on_cable_mouse_entered"]
-[connection signal="input_event" from="Cable2" to="." method="_on_cable_input_event"]
-[connection signal="input_event" from="Cable2" to="Cable2" method="_on_input_event"]
-[connection signal="mouse_entered" from="Cable2" to="." method="_on_cable_mouse_entered"]
-[connection signal="input_event" from="Cable3" to="." method="_on_cable_input_event"]
-[connection signal="input_event" from="Cable3" to="Cable3" method="_on_input_event"]
-[connection signal="mouse_entered" from="Cable3" to="." method="_on_cable_mouse_entered"]
-[connection signal="input_event" from="Cable4" to="." method="_on_cable_input_event"]
-[connection signal="input_event" from="Cable4" to="Cable4" method="_on_input_event"]
-[connection signal="mouse_entered" from="Cable4" to="." method="_on_cable_mouse_entered"]
