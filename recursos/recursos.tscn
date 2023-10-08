@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://0qm1cdnm44gf" path="res://sprites/piedra verde.png" id="5_cdoq2"]
 [ext_resource type="Script" path="res://recursos/verifier.gd" id="6_3b3ha"]
 [ext_resource type="Script" path="res://recursos/tacho.gd" id="7_gcphc"]
-[ext_resource type="Texture2D" uid="uid://dgw2t6xq7mlof" path="res://sprites/PAISAJE.png" id="8_ycmro"]
+[ext_resource type="Texture2D" uid="uid://381d6i4qqced" path="res://sprites/PAISAJE.png" id="8_ycmro"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j41ou"]
 

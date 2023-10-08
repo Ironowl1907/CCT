@@ -1,5 +1,5 @@
 extends Node2D
 
 
-func _process(delta):
-	self.global_position.y -= 10
+func _process(_delta):
+	self.global_position.y -= 7
