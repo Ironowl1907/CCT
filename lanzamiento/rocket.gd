@@ -91,4 +91,4 @@ func _on_transitioner_animation_finished(anim_name):
 	if not shouldDie:
 		get_parent().get_parent().get_parent().c4()
 	else:
-		get_tree().change_scene_to_file("res://Menus/Failure/main_menu.tscn")
+		get_tree().change_scene_to_file("res://Menus/Failure/main_menu2.tscn")

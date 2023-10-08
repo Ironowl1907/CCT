@@ -9,10 +9,10 @@ var gravity = 0
 var spee = 0
 var canShoot = true
 
-func _physics_process(delta):
+func _physics_process(_delta):
 
 	# Handle Jump.
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("Up"):
 		spee -= 5
 	
 	else:
@@ -23,9 +23,9 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("Right"):
 		rotation_degrees += 2
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("Left"):
 		rotation_degrees -= 2
 
 	if Input.is_action_just_pressed("space") and canShoot:
@@ -47,7 +47,7 @@ func _physics_process(delta):
 	for index in get_slide_collision_count():
 		var collision = get_slide_collision(index)
 		if collision.get_collider().name != "limits":
-			print("ACÁ PIERDE FACU")
+						get_tree().change_scene_to_file("res://Menus/Failure/main_menu2.tscn") # <- Here it dies ////////////////////
 
 
 func _on_shooting_timer_timeout():

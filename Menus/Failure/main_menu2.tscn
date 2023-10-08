@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs8nqipey855o"]
+
+[ext_resource type="Script" path="res://Menus/Failure/main_menu2.gd" id="1_nhjy4"]
+[ext_resource type="Texture2D" uid="uid://be8ind0xeouf8" path="res://sprites/fondo-inicio1.png" id="2_lwf55"]
+[ext_resource type="Texture2D" uid="uid://bwaincob3r5vg" path="res://sprites/NAVE EXTR uno.png" id="3_vfcxr"]
+
+[sub_resource type="Gradient" id="Gradient_k7ld4"]
+colors = PackedColorArray(1, 0.596078, 0, 1, 1, 0, 0, 1)
+
+[node name="Fail" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.00100456
+script = ExtResource("1_nhjy4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(953, 527)
+scale = Vector2(8, 8)
+texture = ExtResource("2_lwf55")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 629.0
+offset_top = 25.0
+offset_right = 1181.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 121
+text = "Try Again"
+
+[node name="Again" type="Button" parent="."]
+layout_mode = 0
+offset_left = 511.701
+offset_top = 298.321
+offset_right = 1314.7
+offset_bottom = 510.321
+theme_override_font_sizes/font_size = 149
+text = "     Again     "
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 469.461
+offset_top = 536.472
+offset_right = 1367.46
+offset_bottom = 748.472
+theme_override_font_sizes/font_size = 149
+text = "     Exit      "
+
+[node name="NaveExtrUno" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(1489.31, 691.497)
+rotation = 0.707913
+scale = Vector2(13, 13)
+texture = ExtResource("3_vfcxr")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(1534.45, 548.542)
+amount = 123
+emission_shape = 1
+emission_sphere_radius = 44.45
+gravity = Vector2(0, -60)
+scale_amount_min = 9.8
+scale_amount_max = 12.2
+color_ramp = SubResource("Gradient_k7ld4")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(1316.28, 713.323)
+amount = 123
+emission_shape = 1
+emission_sphere_radius = 44.45
+gravity = Vector2(0, -60)
+scale_amount_min = 9.8
+scale_amount_max = 12.2
+color_ramp = SubResource("Gradient_k7ld4")
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+position = Vector2(1316.28, 713.323)
+amount = 123
+emission_shape = 1
+emission_sphere_radius = 44.45
+gravity = Vector2(0, -60)
+scale_amount_min = 9.8
+scale_amount_max = 12.2
+color_ramp = SubResource("Gradient_k7ld4")
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+position = Vector2(1356.16, 833.363)
+amount = 123
+emission_shape = 1
+emission_sphere_radius = 44.45
+gravity = Vector2(0, -60)
+scale_amount_min = 9.8
+scale_amount_max = 12.2
+color_ramp = SubResource("Gradient_k7ld4")
+
+[connection signal="pressed" from="Again" to="." method="_on_again_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed" flags=18]

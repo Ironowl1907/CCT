@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://spkfjriqfmo1"]
 
 [ext_resource type="Script" path="res://FacuPRY/Objects/Metheor.gd" id="1_iupwb"]
-[ext_resource type="Texture2D" uid="uid://cxugxj1klkarh" path="res://sprites/asteroide2.png" id="2_e5efs"]
+[ext_resource type="Texture2D" uid="uid://do7bmxq38y6k0" path="res://sprites/asteroide2.png" id="2_e5efs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x8434"]
 friction = 0.0
