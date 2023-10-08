@@ -23,3 +23,6 @@ position = Vector2(1724, 157)
 
 [node name="Cable" parent="." instance=ExtResource("1_synt3")]
 position = Vector2(235, 159)
+
+[connection signal="mouse_entered" from="Cable" to="Cable" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cable" to="Cable" method="_on_mouse_exited"]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cnwildu28fhvc" path="res://sprites/piedra roja.png" id="2_n0skw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbelo"]
-size = Vector2(128, 128)
+size = Vector2(89, 70)
 
 [node name="Cable" type="Area2D"]
 position = Vector2(255, 124)
@@ -14,6 +14,5 @@ script = ExtResource("1_qowvu")
 shape = SubResource("RectangleShape2D_fbelo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(20, 25)
 scale = Vector2(21.875, 17.5)
 texture = ExtResource("2_n0skw")
