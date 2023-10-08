@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://csstordgto5vk"]
+
+[ext_resource type="Script" path="res://cablecitos/Scene/main.gd" id="1_ca80d"]
+[ext_resource type="Texture2D" uid="uid://coodkx354aln2" path="res://icon.svg" id="2_wtuem"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ca80d")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_wtuem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
