@@ -23,9 +23,3 @@ position = Vector2(1724, 157)
 
 [node name="Cable" parent="." instance=ExtResource("1_synt3")]
 position = Vector2(235, 159)
-
-[connection signal="input_event" from="Connection" to="." method="_on_connection_input_event"]
-[connection signal="input_event" from="Connection" to="Cable" method="_on_connection_input_event"]
-[connection signal="input_event" from="Cable" to="." method="_on_cable_input_event"]
-[connection signal="input_event" from="Cable" to="Cable" method="_on_input_event"]
-[connection signal="mouse_entered" from="Cable" to="." method="_on_cable_mouse_entered"]
