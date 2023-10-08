@@ -52,9 +52,9 @@ func _process(delta):
 		else:
 			rotationAccel = 0
 	
-		if Input.is_action_pressed("Left"):
+		if Input.is_action_pressed("ui_left"):
 			rotationAccel -= 70 * delta
-		elif Input.is_action_pressed("Right"):
+		elif Input.is_action_pressed("ui_right"):
 			rotationAccel += 70 * delta
 
 		if (absolute(rotation_degrees) < 10):
@@ -73,9 +73,9 @@ func _process(delta):
 		else:
 			rotationAccel = 0
 		
-		if Input.is_action_pressed("Left"):
+		if Input.is_action_pressed("ui_left"):
 			rotationAccel -= 70 * delta
-		elif Input.is_action_pressed("Right"):
+		elif Input.is_action_pressed("ui_right"):
 			rotationAccel += 70 * delta
 		rotation_degrees += rotationAccel
 
