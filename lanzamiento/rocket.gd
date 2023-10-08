@@ -3,12 +3,9 @@ extends Sprite2D
 var rotationAccel = 0
 var s = 1
 var dupli = 16
-<<<<<<< Updated upstream
 signal balanceGameOver
-=======
 var shouldMove = false
 var canDie = true
->>>>>>> Stashed changes
 
 func absolute(n):
 	if (n < 1):
@@ -16,14 +13,6 @@ func absolute(n):
 	else:
 		return n
 
-<<<<<<< Updated upstream
-func _ready():
-	connect("balanceGameOver", get_parent().get_parent().get_parent().balanceDefeat)
-	$winTimer.start()
-	get_parent().get_node("Camera2D").shake(100, 100, 7)
-
-=======
->>>>>>> Stashed changes
 func _process(delta):
 	if Input.is_action_pressed("space"):
 		shouldMove = true
@@ -42,7 +31,6 @@ func _process(delta):
 		else:
 			s = -1
 		
-<<<<<<< Updated upstream
 	if (rotation_degrees > 0):
 		s = 1
 	else:
@@ -67,7 +55,7 @@ func _process(delta):
 		rotationAccel -= 70 * delta
 	elif Input.is_action_pressed("ui_right"):
 		rotationAccel += 70 * delta
-=======
+
 		if (absolute(rotation_degrees) < 10):
 			rotationAccel = 1 * s * delta * dupli
 		elif (absolute(rotation_degrees) < 20):
@@ -87,8 +75,6 @@ func _process(delta):
 			rotationAccel -= 70 * delta
 		elif Input.is_action_pressed("ui_right"):
 			rotationAccel += 70 * delta
->>>>>>> Stashed changes
-
 		rotation_degrees += rotationAccel
 
 
