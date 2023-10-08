@@ -28,7 +28,7 @@ position = Vector2(1636, 484)
 position = Vector2(1636, 619)
 
 [node name="Connection4" parent="." instance=ExtResource("4_1f717")]
-position = Vector2(1639, 756)
+position = Vector2(1638, 754)
 
 [node name="Cable" parent="." instance=ExtResource("1_synt3")]
 texture_filter = 1

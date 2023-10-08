@@ -5,6 +5,14 @@ var initalPos = Vector2(300,485)
 var mouseOnTop = false
 
 
+func _ready():
+	var blue = preload("res://sprites/piedra celeste.png")
+	var red = preload("res://sprites/piedra roja.png")
+	var yellow = preload("res://sprites/piedra amarilla.png")
+	var green = preload("res://sprites/piedra verde.png")
+	
+	$Sprite2D.texture = blue
+
 func _process(_delta):
 	if Input.is_action_pressed("CLICK") and mouseOnTop:
 		selected = true
