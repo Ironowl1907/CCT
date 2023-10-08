@@ -9,6 +9,6 @@ func _ready():
 	t2 = $tacho2
 	t3 = $tacho3
 
-func _process(delta):
+func _process(_delta):
 	if (t1.goodCounter >= 2 and t2.goodCounter >= 2 and t3.goodCounter >= 2):
 		print("SO!")
