@@ -47,7 +47,7 @@ func _physics_process(_delta):
 	for index in get_slide_collision_count():
 		var collision = get_slide_collision(index)
 		if collision.get_collider().name != "limits":
-						get_tree().change_scene_to_file("res://Menus/Failure/main_menu2.tscn") # <- Here it dies ////////////////////
+			get_tree().change_scene_to_file("res://Menus/Failure/main_menu1.tscn") # <- Here it dies ////////////////////
 
 
 func _on_shooting_timer_timeout():

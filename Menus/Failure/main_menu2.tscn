@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bt23m2j0nindq"]
+[gd_scene load_steps=5 format=3 uid="uid://bs8nqipey855o"]
 
-[ext_resource type="Script" path="res://Menus/Failure/main_menu2.gd" id="1_nhjy4"]
-[ext_resource type="Texture2D" uid="uid://duwkoyrci5pg0" path="res://sprites/fondo-inicio1.png" id="2_lwf55"]
-[ext_resource type="Texture2D" uid="uid://d2kdi4racs7ea" path="res://sprites/NAVE EXTR uno.png" id="3_vfcxr"]
+[ext_resource type="Script" path="res://Menus/Failure/main_menu1.gd" id="1_mb4a5"]
+[ext_resource type="Texture2D" uid="uid://be8ind0xeouf8" path="res://sprites/fondo-inicio1.png" id="2_lwf55"]
+[ext_resource type="Texture2D" uid="uid://bwaincob3r5vg" path="res://sprites/NAVE EXTR uno.png" id="3_vfcxr"]
 
 [sub_resource type="Gradient" id="Gradient_k7ld4"]
 colors = PackedColorArray(1, 0.596078, 0, 1, 1, 0, 0, 1)
 
-[node name="Fail" type="Control"]
+[node name="Fail2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +17,7 @@ offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.00100456
-script = ExtResource("1_nhjy4")
+script = ExtResource("1_mb4a5")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture_filter = 1
