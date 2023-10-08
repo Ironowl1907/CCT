@@ -35,4 +35,7 @@ func c6() -> void:
 func c7() -> void:
 	get_children()[0].queue_free()
 	add_child(cut7.instantiate())
-	
+
+func balanceDefeat():
+	get_children()[0].queue_free()
+	add_child(cut3.instantiate())

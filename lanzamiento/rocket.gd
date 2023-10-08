@@ -3,6 +3,7 @@ extends Sprite2D
 var rotationAccel = 0
 var s = 1
 var dupli = 16
+signal balanceGameOver
 
 func absolute(n):
 	if (n < 1):
@@ -11,6 +12,7 @@ func absolute(n):
 		return n
 
 func _ready():
+	connect("balanceGameOver", get_parent().get_parent().get_parent().balanceDefeat)
 	$winTimer.start()
 	get_parent().get_node("Camera2D").shake(100, 100, 7)
 
@@ -35,7 +37,7 @@ func _process(delta):
 	elif (absolute(rotation_degrees) < 60):
 		$incline.texture = preload("res://sprites/bola roja.png")
 		rotationAccel = 4 * s * delta * dupli
-		print("ACÁ PIERDE FACU")
+		emit_signal("balanceGameOver")
 	else:
 		rotationAccel = 0
 	

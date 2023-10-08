@@ -1,29 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://dwqwlje2hrsow"]
 
-[ext_resource type="Texture2D" uid="uid://df7o55xungcr7" path="res://sprites/cielo nocturno-tierra.png" id="1_pdwgg"]
-[ext_resource type="Texture2D" uid="uid://cqmkwsblepuax" path="res://sprites/coheteÑAWOIHY.png" id="1_xaamx"]
-[ext_resource type="Texture2D" uid="uid://dgw2t6xq7mlof" path="res://sprites/PAISAJE.png" id="1_yyc1a"]
+[ext_resource type="Texture2D" uid="uid://ppolam7y4ho4" path="res://sprites/cielo nocturno-tierra.png" id="1_pdwgg"]
+[ext_resource type="Texture2D" uid="uid://bgo55wf7ijsj6" path="res://sprites/coheteÑAWOIHY.png" id="1_xaamx"]
+[ext_resource type="Texture2D" uid="uid://381d6i4qqced" path="res://sprites/PAISAJE.png" id="1_yyc1a"]
 [ext_resource type="Script" path="res://lanzamiento/mover.gd" id="2_2cetx"]
 [ext_resource type="Script" path="res://lanzamiento/rocket.gd" id="2_t2pw2"]
-[ext_resource type="Texture2D" uid="uid://4pysdnt3f0i0" path="res://sprites/bola verde.png" id="3_r6xcr"]
+[ext_resource type="Texture2D" uid="uid://c16mgxu0o45do" path="res://sprites/bola verde.png" id="3_r6xcr"]
 [ext_resource type="Script" path="res://lanzamiento/shake.gd" id="4_2wbsx"]
-[ext_resource type="Texture2D" uid="uid://kewhm4oqkgmp" path="res://sprites/acelerometro.png" id="5_r0p4p"]
+[ext_resource type="Texture2D" uid="uid://di6d2e5hg2rha" path="res://sprites/acelerometro.png" id="5_r0p4p"]
 [ext_resource type="Texture2D" uid="uid://coodkx354aln2" path="res://icon.svg" id="9_nr458"]
-
-[sub_resource type="Animation" id="Animation_47o25"]
-resource_name = "fade"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_xr4qw"]
 length = 0.001
@@ -38,6 +23,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_47o25"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_01hcp"]
@@ -123,7 +123,7 @@ hue_variation_min = 1.0
 hue_variation_max = 1.0
 
 [node name="winTimer" type="Timer" parent="mover/rocket"]
-wait_time = 2.0
+wait_time = 15.0
 
 [node name="Camera2D" type="Camera2D" parent="mover"]
 position = Vector2(960, 540)
