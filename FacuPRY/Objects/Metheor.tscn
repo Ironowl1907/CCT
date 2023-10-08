@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bstih0488hi4t"]
+[gd_scene load_steps=5 format=3 uid="uid://spkfjriqfmo1"]
 
+[ext_resource type="Script" path="res://FacuPRY/Objects/Metheor.gd" id="1_iupwb"]
 [ext_resource type="Texture2D" uid="uid://coodkx354aln2" path="res://icon.svg" id="1_rmbvp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x8434"]
@@ -9,12 +10,19 @@ friction = 0.0
 size = Vector2(124, 124)
 
 [node name="Metheor" type="RigidBody2D"]
+collision_layer = 7
+collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_x8434")
 gravity_scale = 0.0
 linear_velocity = Vector2(-100, 0)
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("1_iupwb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.818598, 0.818598)
 texture = ExtResource("1_rmbvp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.815915, 0.815915)
 shape = SubResource("RectangleShape2D_4asot")
