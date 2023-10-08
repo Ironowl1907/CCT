@@ -3,6 +3,7 @@ extends Area2D
 var selected: bool = false
 @onready var initalPos = position
 var mouseOnTop = false
+var CheckCab = false
 
 func _ready():
 	var Mycolor 
@@ -15,6 +16,14 @@ func _process(_delta):
 		selected = false
 		if get_overlapping_areas():
 			position = get_overlapping_areas()[0].position
+			var overlapping_areas = get_overlapping_areas()
+			var overlapping_sprite = overlapping_areas[0].get_node("Sprite2D")
+			if $Sprite2D.texture == overlapping_sprite.texture:
+				CheckCab = true
+				print ("Dou")
+			else:
+				CheckCab = false
+				print ("NoDou")
 	
 	if selected:
 		position = get_global_mouse_position()
