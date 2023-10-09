@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c6giygd5d02s2"]
+[gd_scene load_steps=20 format=3 uid="uid://c6giygd5d02s2"]
 
 [ext_resource type="Script" path="res://recursos/pelota.gd" id="2_r50qv"]
 [ext_resource type="AudioStream" uid="uid://crbh4ogspddtx" path="res://audio/mineral.wav" id="3_7y54q"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://recursos/tacho.gd" id="7_gcphc"]
 [ext_resource type="Script" path="res://recursos/filler.gd" id="8_ucv4p"]
 [ext_resource type="Texture2D" uid="uid://dgw2t6xq7mlof" path="res://sprites/PAISAJE.png" id="8_ycmro"]
+[ext_resource type="Script" path="res://recursos/Button.gd" id="10_sho6c"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j41ou"]
 
@@ -364,7 +365,7 @@ offset_bottom = 1712.0
 scale = Vector2(0.1725, 0.163333)
 theme_override_font_sizes/normal_font_size = 200
 script = ExtResource("8_ucv4p")
-txt = "Para la colonizacion se van a necesitar recursos e investigacion. Para esto vamos a recolectar y almacenar en los contenedores cuarzo, silicio y carbonato de calcio. Separa los minerales en sus contenedores"
+txt = "Research and resources are going to be needed for habitating Titan. For that, we will mine quartz, silicon and calcium carbonate and send those materials to Titan for building the first habitats. Separate the minerals in their containers"
 
 [node name="intialTimer" type="Timer" parent="text/text"]
 wait_time = 0.7
@@ -372,6 +373,16 @@ autostart = true
 
 [node name="textFiller" type="Timer" parent="text/text"]
 wait_time = 0.02
+
+[node name="Button" type="Button" parent="text"]
+offset_left = 63.0
+offset_top = 318.0
+offset_right = 1453.0
+offset_bottom = 1144.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 600
+text = "Next"
+script = ExtResource("10_sho6c")
 
 [connection signal="body_entered" from="verifier/tacho/Area2D" to="verifier/tacho" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="verifier/tacho/Area2D" to="verifier/tacho" method="_on_area_2d_body_exited"]
@@ -400,3 +411,4 @@ wait_time = 0.02
 [connection signal="animation_finished" from="verifier/transitioner" to="verifier" method="_on_transitioner_animation_finished"]
 [connection signal="timeout" from="text/text/intialTimer" to="text/text" method="_on_intial_timer_timeout"]
 [connection signal="timeout" from="text/text/textFiller" to="text/text" method="_on_text_filler_timeout"]
+[connection signal="button_down" from="text/Button" to="text/Button" method="_on_button_down"]
